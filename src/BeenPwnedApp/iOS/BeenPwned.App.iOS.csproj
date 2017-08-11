@@ -120,9 +120,9 @@
     <Compile Include="AppDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BeenPwned.App\BeenPwned.App.csproj">
+    <ProjectReference Include="..\Core\BeenPwned.App.Core.csproj">
       <Project>{F2C0B4D9-96D5-4691-B624-D5868D16D996}</Project>
-      <Name>BeenPwned.App</Name>
+      <Name>BeenPwned.App.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

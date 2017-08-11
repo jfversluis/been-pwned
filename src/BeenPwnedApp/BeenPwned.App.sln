@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeenPwned.App", "BeenPwned.App\BeenPwned.App.csproj", "{F2C0B4D9-96D5-4691-B624-D5868D16D996}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeenPwned.App.Core", "Core\BeenPwned.App.Core.csproj", "{F2C0B4D9-96D5-4691-B624-D5868D16D996}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeenPwned.App.iOS", "iOS\BeenPwned.App.iOS.csproj", "{1666094E-7468-4889-8357-79FCAB649985}"
 EndProject
