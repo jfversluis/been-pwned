@@ -153,6 +153,13 @@
     <Reference Include="Lottie.Forms.iOS">
       <HintPath>..\packages\Com.Airbnb.Xamarin.Forms.Lottie.2.3.1\lib\xamarinios\Lottie.Forms.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="BeenPwned.Api">
+      <HintPath>..\packages\BeenPwned.Api.1.0.4\lib\netstandard1.3\BeenPwned.Api.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
