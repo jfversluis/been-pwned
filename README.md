@@ -1,3 +1,5 @@
+iOS [![Build status](https://build.mobile.azure.com/v0.1/apps/cc051415-6b2e-4867-b5b5-374921c59c11/branches/master/badge)](https://mobile.azure.com) | Android: [![Build status](https://build.mobile.azure.com/v0.1/apps/317544cf-5db6-4045-a11a-6958000b2c85/branches/master/badge)](https://mobile.azure.com)
+
 # been-pwned
 
 Is your account hacked? Your username, password, financial data or even sexual preference out in the open?
