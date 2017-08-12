@@ -8,6 +8,6 @@
                 <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Label x:Name="DescriptionLabel" Margin="15,0,0,0" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="0" />
-        <Image x:Name="CheckImage" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" HorizontalOptions="End" Grid.Column="1" Margin="0,0,15,0" />
+        <Image x:Name="CheckImage" Source="nocheck.png" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" HorizontalOptions="End" Grid.Column="1" Margin="0,0,15,0" />
     </Grid>
 </ViewCell>

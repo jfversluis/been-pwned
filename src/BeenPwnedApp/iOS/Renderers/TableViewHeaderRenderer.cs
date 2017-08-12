@@ -36,6 +36,8 @@ namespace BeenPwned.App.Core.iOS.Renderers
                 var view = new UIView(new CGRect(0, 200, 300, 244));
                 var top = section == 0 ? 17 : 0;
 
+                // HACK: Somehow the first header has an offset, which we counter here.
+
                 var label = new UILabel(new CGRect(15, top, 300, 44))
                 {
                     Text = TitleForHeader(tableView, section),
