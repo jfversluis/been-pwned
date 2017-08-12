@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using BeenPwned.App.Core.Controls;
 using Xamarin.Forms;
 
 namespace BeenPwned.App.Core.Pages
 {
-    public partial class MainPage : ContentPage
+    public partial class TutorialPage : TutorialBasePage
     {
-        public MainPage()
+        public TutorialPage()
         {
             InitializeComponent();
         }

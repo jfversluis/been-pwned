@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:TutorialBasePage BackgroundColor="#3a9ac4" 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BeenPwned.App.Core.Controls;assembly=BeenPwned.App.Core"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+    x:Class="BeenPwned.App.Core.Pages.TutorialPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Skip" Command="{Binding SkipTutorialCommand}" />
+    </ContentPage.ToolbarItems>
+	<ContentPage.Content>
+        <Grid>
+            <controls:CarouselViewControl Margin="0,0,0,40" Orientation="Horizontal" InterPageSpacing="10" 
+                Position="0" ItemsSource="{Binding Items}" ShowIndicators="true" IndicatorsTintColor="#33000000" 
+                CurrentPageIndicatorTintColor="#FFFFFF" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                <controls:CarouselViewControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Vertical" Padding="30">
+                            <Image Source="{Binding ImageUrl}" WidthRequest="200" HeightRequest="200" Margin="50" />
+                            <!--<lottie:AnimationView Progress="0" x:Name="AnimationView" Duration="200" Animation="vr_animation.json" 
+                                Loop="True" AutoPlay="True" WidthRequest="300" HeightRequest="300" />-->
+                            <Label Margin="0,0,0,5" FontFamily="Ubuntu-Bold" Grid.Row="1" FontAttributes="Bold" Text="{Binding Title}" HorizontalTextAlignment="Center" TextColor="#FFFFFF" FontSize="24" />
+                            <Label FontFamily="Ubuntu-Regular" Grid.Row="2" Text="{Binding SubTitle}" HorizontalTextAlignment="Center" TextColor="#FFFFFF" FontSize="16" />
+                        </StackLayout>
+                    </DataTemplate>
+                </controls:CarouselViewControl.ItemTemplate>
+            </controls:CarouselViewControl>
+        </Grid>
+	</ContentPage.Content>
+</local:TutorialBasePage>
