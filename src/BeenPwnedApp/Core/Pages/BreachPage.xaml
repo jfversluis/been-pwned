@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="{Binding Breach.Title}" NavigationPage.BackButtonTitle=""
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="BeenPwned.App.Core.Pages.BreachPage">
+	<ContentPage.Content>
+        <TableView Intent="Form">
+            <TableSection Title="Breach details">
+                <TextCell Text="Domain" />
+                <TextCell Text="Accounts" />
+                <TextCell Text="Breach date" />
+                <TextCell Text="Added date" />
+            </TableSection>
+            <TableSection Title="Status">
+                <TextCell Text="Is verified" />
+                <TextCell Text="Is sensitive" />
+                <TextCell Text="Is retired" />
+                <TextCell Text="Is spamlist" />
+            </TableSection>
+            <TableSection Title="Description">
+                <ViewCell>
+                    <Label Text="{Binding Breach.Description}" />
+                </ViewCell>
+            </TableSection>
+        </TableView>
+	</ContentPage.Content>
+</ContentPage>

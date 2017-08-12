@@ -1,15 +1,47 @@
-﻿using Xamarin.Forms;
+﻿using BeenPwned.App.Core.PageModels;
+using BeenPwned.App.Helpers;
+using FreshMvvm;
+using Xamarin.Forms;
 
 namespace BeenPwned.App
 {
     public partial class BeenPwnedApp : Application
     {
+        public static BeenPwnedApp Instance;
+
         public BeenPwnedApp()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            Instance = this;
+
+            if (!Settings.SkippedTutorial)
+            {
+                var page = FreshPageModelResolver.ResolvePageModel<TutorialPageModel>();
+
+                MainPage = new FreshNavigationContainer(page)
+                {
+                    BarTextColor = Color.White,
+                    BarBackgroundColor = Color.FromHex("#3a9ac4"),
+                };
+            }
+            else
+            {
+                SwitchToMainPage();
+            }
         }
+
+        public void SwitchToMainPage()
+        {
+            var tabbed = new FreshTabbedNavigationContainer();
+
+            tabbed.AddTab<MainPageModel>("Been pwned?", "icon-pwned.png");
+            tabbed.AddTab<BreachesPageModel>("Breaches", "icon-breaches.png");
+            tabbed.AddTab<PasswordPageModel>("Passwords", "icon-password.png");
+
+            MainPage = tabbed;
+        }
+
 
         protected override void OnStart()
         {

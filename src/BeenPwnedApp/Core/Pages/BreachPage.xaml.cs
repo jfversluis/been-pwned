@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace BeenPwned.App.Core.Pages
 {
-    public partial class MainPage : ContentPage
+    public partial class BreachPage : ContentPage
     {
-        public MainPage()
+        public BreachPage()
         {
             InitializeComponent();
         }
