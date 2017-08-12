@@ -1,25 +1,28 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage Title="{Binding Breach.Title}" NavigationPage.BackButtonTitle=""
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:cells="clr-namespace:BeenPwned.App.Core.ViewCells;assembly=BeenPwned.App.Core"
     x:Class="BeenPwned.App.Core.Pages.BreachPage">
 	<ContentPage.Content>
-        <TableView Intent="Form">
+        <TableView Intent="Form" HasUnevenRows="true">
             <TableSection Title="Breach details">
-                <TextCell Text="Domain" />
-                <TextCell Text="Accounts" />
-                <TextCell Text="Breach date" />
-                <TextCell Text="Added date" />
-            </TableSection>
+                <cells:BasicDataCell Label="Domain" Text="{Binding Breach.Domain}" />
+                <cells:BasicDataCell Label="Accounts" Text="{Binding Breach.NoOfAccounts, StringFormat='{0:0,0}'}" />
+                <cells:BasicDataCell Label="Breach date" Text="{Binding Breach.BreachDate, StringFormat='{0:dd-MM-yyyy}'}" />
+                <cells:BasicDataCell Label="Added date" Text="{Binding Breach.AddedDate, StringFormat='{0:dd-MM-yyyy}'}" />
+                </TableSection>
             <TableSection Title="Status">
-                <TextCell Text="Is verified" />
-                <TextCell Text="Is sensitive" />
-                <TextCell Text="Is retired" />
-                <TextCell Text="Is spamlist" />
+                <cells:CheckMarkCell Checked="{Binding Breach.IsSensitive}" Label="Is sensitive" />
+                <cells:CheckMarkCell Checked="{Binding Breach.IsRetired}" Label="Is retired" />
+                <cells:CheckMarkCell Checked="{Binding Breach.IsSpamList}" Label="Is spamlist" />
+                <cells:CheckMarkCell Checked="{Binding Breach.IsVerified}" Label="Is verified" />
             </TableSection>
             <TableSection Title="Description">
                 <ViewCell>
-                    <Label Text="{Binding Breach.Description}" />
+                    <ContentView Padding="15">
+                        <Label Text="{Binding Breach.Description}" />
+                    </ContentView>
                 </ViewCell>
             </TableSection>
         </TableView>

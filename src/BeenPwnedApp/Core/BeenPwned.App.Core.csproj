@@ -56,6 +56,14 @@
     <Compile Include="Pages\PasswordPage.xaml.cs">
       <DependentUpon>PasswordPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\BreachToImageUrlConverter.cs" />
+    <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="ViewCells\BasicDataCell.xaml.cs">
+      <DependentUpon>BasicDataCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCells\CheckMarkCell.xaml.cs">
+      <DependentUpon>CheckMarkCell.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
@@ -76,12 +84,20 @@
     <EmbeddedResource Include="Pages\PasswordPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewCells\BasicDataCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCells\CheckMarkCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
     <Folder Include="Models\" />
     <Folder Include="Models\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Converters\" />
+    <Folder Include="ViewCells\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

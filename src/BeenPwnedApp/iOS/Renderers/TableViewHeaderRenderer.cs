@@ -34,8 +34,9 @@ namespace BeenPwned.App.Core.iOS.Renderers
             public override UIView GetViewForHeader(UITableView tableView, nint section)
             {
                 var view = new UIView(new CGRect(0, 200, 300, 244));
+                var top = section == 0 ? 17 : 0;
 
-                var label = new UILabel(new CGRect(15, 0, 300, 44))
+                var label = new UILabel(new CGRect(15, top, 300, 44))
                 {
                     Text = TitleForHeader(tableView, section),
                     Font = UIFont.FromName("Ubuntu-Regular", 15),
