@@ -183,6 +183,7 @@
     <Compile Include="Renderers\TableViewHeaderRenderer.cs" />
     <Compile Include="Renderers\TutorialPageRenderer.cs" />
     <Compile Include="Renderers\TabbedPageFontRenderer.cs" />
+    <Compile Include="Renderers\ExtendedWebViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\BeenPwned.App.Core.csproj">

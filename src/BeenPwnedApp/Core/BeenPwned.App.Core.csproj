@@ -64,6 +64,8 @@
     <Compile Include="ViewCells\CheckMarkCell.xaml.cs">
       <DependentUpon>CheckMarkCell.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\HtmlToSourceConverter.cs" />
+    <Compile Include="Controls\ExtendedWebView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />

@@ -6,6 +6,7 @@
 	<Application.Resources>
 		<ResourceDictionary>
             <converters:BreachToImageUrlConverter x:Key="BreachToImageUrlConverter" />
+            <converters:HtmlToSourceConverter x:Key="HtmlToSourceConverter" />
             
             <!-- Our custom colors -->
             <Color x:Key="MainTextColor">#00171F</Color>

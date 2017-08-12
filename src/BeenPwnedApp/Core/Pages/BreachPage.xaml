@@ -2,6 +2,7 @@
 <ContentPage Title="{Binding Breach.Title}" NavigationPage.BackButtonTitle=""
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:BeenPwned.App.Core.Controls;assembly=BeenPwned.App.Core"
     xmlns:cells="clr-namespace:BeenPwned.App.Core.ViewCells;assembly=BeenPwned.App.Core"
     x:Class="BeenPwned.App.Core.Pages.BreachPage">
 	<ContentPage.Content>
@@ -17,12 +18,11 @@
                 <cells:CheckMarkCell Checked="{Binding Breach.IsRetired}" Label="Is retired" />
                 <cells:CheckMarkCell Checked="{Binding Breach.IsSpamList}" Label="Is spamlist" />
                 <cells:CheckMarkCell Checked="{Binding Breach.IsVerified}" Label="Is verified" />
+                <cells:CheckMarkCell Checked="{Binding Breach.IsFabricated}" Label="Is fabricated" />
             </TableSection>
             <TableSection Title="Description">
                 <ViewCell>
-                    <ContentView Padding="15">
-                        <Label Text="{Binding Breach.Description}" />
-                    </ContentView>
+                    <local:ExtendedWebView HeightRequest="200" Source="{Binding Breach.Description, Converter={StaticResource HtmlToSourceConverter}}" />
                 </ViewCell>
             </TableSection>
         </TableView>
