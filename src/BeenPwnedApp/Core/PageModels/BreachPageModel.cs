@@ -1,8 +1,10 @@
-﻿namespace BeenPwned.App.Core.PageModels
+﻿using BeenPwned.Api.Models;
+
+namespace BeenPwned.App.Core.PageModels
 {
     public class BreachPageModel : BasePageModel
     {
-        //public Breach Breach { get; set; }
+        public Breach Breach { get; set; }
 
         public override void Init(object initData)
         {
@@ -10,7 +12,7 @@
 
             if (initData != null)
             {
-                //Breach = (Breach)initData;
+                Breach = (Breach)initData;
             }
         }
     }

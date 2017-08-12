@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+<Application xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:converters="clr-namespace:BeenPwned.App.Core.Converters;assembly=BeenPwned.App.Core"
     x:Class="BeenPwned.App.BeenPwnedApp">
 	<Application.Resources>
 		<ResourceDictionary>
+            <converters:BreachToImageUrlConverter x:Key="BreachToImageUrlConverter" />
+            <converters:HtmlToSourceConverter x:Key="HtmlToSourceConverter" />
+            
             <!-- Our custom colors -->
             <Color x:Key="MainTextColor">#00171F</Color>
 
