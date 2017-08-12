@@ -1,41 +1,81 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using BeenPwned.Api;
+using Akavache;
 using BeenPwned.Api.Models;
+using BeenPwned.App.Core.Services;
 using FreshMvvm;
+using MvvmHelpers;
 using Xamarin.Forms;
 
 namespace BeenPwned.App.Core.PageModels
 {
-    public class BreachesPageModel : FreshBasePageModel
+    public class BreachesPageModel : BasePageModel
     {
         bool _isNavigating;
 
-        public ObservableCollection<Breach> Breaches { get; set; } = new ObservableCollection<Breach>();
+		private readonly ObservableRangeCollection<Breach> _breaches = new ObservableRangeCollection<Breach>();
+        public ObservableCollection<Breach> Breaches { get { return _breaches; } }
+
         public ICommand OpenBreachCommand => new Command(async (item) => await OpenBreach(item), (arg) => !_isNavigating);
-        private readonly BeenPwnedClient _pwnedClient;
 
-        public BreachesPageModel()
-        {
-            _pwnedClient = new BeenPwnedClient("BeenPwned-iOS");
-        }
+		private ICommand _refreshCommand;
+		public ICommand RefreshCommand
+		{
+			get
+			{
+				return _refreshCommand ??
+					(_refreshCommand = new Command(ExecuteRefreshCommand));
+			}
+		}
 
-        public async override void Init(object initData)
+        public override void Init(object initData)
         {
             base.Init(initData);
 
-            var breaches = await _pwnedClient.GetAllBreaches();
-
-            foreach (var breach in breaches)
-                Breaches.Add(breach);
+            GetBreaches();
         }
 
         public async Task OpenBreach(object breach)
         {
             _isNavigating = true;
+
             await CoreMethods.PushPageModel<BreachPageModel>(breach, false, true);
+
             _isNavigating = false;
         }
+
+		public void GetBreaches(bool force = false)
+		{
+            // TODO move this up to service class
+			var cache = BlobCache.LocalMachine;
+            cache.GetAndFetchLatest("breaches", GetRemoteBreaches,
+				offset =>
+				{
+					TimeSpan elapsed = DateTimeOffset.Now - offset;
+					var invalidate = (force || elapsed > new TimeSpan(24, 0, 0));
+					return invalidate;
+				})
+				.Subscribe((contributions) =>
+				{
+                    _breaches.ReplaceRange(contributions);
+				});
+		}
+
+        private async Task<IEnumerable<Breach>> GetRemoteBreaches()
+		{
+            return await BeenPwnedService.Instance.GetAllBreaches();
+		}
+
+		private void ExecuteRefreshCommand()
+		{
+            IsLoading = true;
+
+            GetBreaches(true);
+
+            IsLoading = false;
+		}
     }
 }

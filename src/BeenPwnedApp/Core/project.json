@@ -1,11 +1,13 @@
 ﻿{
   "dependencies": {
+    "akavache": "5.0.0",
     "BeenPwned.Api": "1.0.4",
     "CarouselView.FormsPlugin": "4.4.2",
     "Com.Airbnb.Xamarin.Forms.Lottie": "2.3.1",
     "Fody": "2.1.2",
     "FreshMvvm": "2.2.0",
     "PropertyChanged.Fody": "2.1.3",
+    "Refractored.MvvmHelpers": "1.3.0",
     "Xam.Plugins.Settings": "3.0.1",
     "Xamarin.FFImageLoading.Forms": "2.2.9",
     "Xamarin.FFImageLoading.Svg.Forms": "2.2.9",
