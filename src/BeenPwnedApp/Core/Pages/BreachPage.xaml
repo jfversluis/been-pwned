@@ -22,7 +22,9 @@
             </TableSection>
             <TableSection Title="Description">
                 <ViewCell>
-                    <local:ExtendedWebView HeightRequest="200" Source="{Binding Breach.Description, Converter={StaticResource HtmlToSourceConverter}}" />
+                    <ContentView Padding="15">
+                      <local:ExtendedWebView HeightRequest="200" Source="{Binding Breach.Description, Converter={StaticResource HtmlToSourceConverter}}" />
+                    </ContentView>
                 </ViewCell>
             </TableSection>
         </TableView>
