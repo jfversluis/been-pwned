@@ -29,7 +29,7 @@ namespace BeenPwned.App.Core.iOS.Renderers
             UIBarButtonItem.Appearance.SetTitleTextAttributes(textAttributes, UIControlState.Normal);
             UIBarButtonItem.Appearance.SetTitleTextAttributes(textAttributes, UIControlState.Highlighted);
 
-            var color = Color.FromHex("#3a9ac4");
+            var color = (Color)Xamarin.Forms.Application.Current.Resources["NavigationBackgroundColor"];
 
             UINavigationBar.Appearance.SetBackgroundImage(color.ToUIColor().ToUIImage(), UIBarMetrics.Default);
             UINavigationBar.Appearance.BarTintColor = color.ToUIColor();

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage Title="Breaches" NavigationPage.BackButtonTitle=""
+<ContentPage BackgroundColor="{StaticResource PageBackgroundColor}" Title="Breaches" NavigationPage.BackButtonTitle=""
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:BeenPwned.App.Core.Controls;assembly=BeenPwned.App.Core"
@@ -23,9 +23,11 @@
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
 
-                                <ffimageloading:CachedImage Grid.Column="0" Margin="10" HeightRequest="40" WidthRequest="80" 
-                                    DownsampleToViewSize="true" Source="{Binding ., Converter={StaticResource BreachToImageUrlConverter}}" />
-
+                                <ContentView Grid.Column="0">
+                                    <ffimageloading:CachedImage Margin="10" HeightRequest="40" WidthRequest="80" 
+                                        DownsampleToViewSize="true" Source="{Binding ., Converter={StaticResource BreachToImageUrlConverter}}" />
+                                </ContentView>
+                                
                                 <StackLayout VerticalOptions="Center" Grid.Column="1">
                                     <Label Margin="0,5,0,0" FontSize="16" Style="{StaticResource BoldLabel}" Text="{Binding Title}" />
                                     <Label Margin="0,-5,0,5" Text="{Binding Domain}" />

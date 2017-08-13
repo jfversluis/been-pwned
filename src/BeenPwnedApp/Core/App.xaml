@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:BeenPwned.App.Core.Controls;assembly=BeenPwned.App.Core"
     xmlns:converters="clr-namespace:BeenPwned.App.Core.Converters;assembly=BeenPwned.App.Core"
     x:Class="BeenPwned.App.BeenPwnedApp">
 	<Application.Resources>
@@ -10,6 +11,12 @@
             
             <!-- Our custom colors -->
             <Color x:Key="MainTextColor">#00171F</Color>
+            <Color x:Key="PageBackgroundColor">#FFFFFF</Color>
+            <Color x:Key="TutorialPageBackgroundColor">#3a9ac4</Color>
+            <Color x:Key="NavigationBackgroundColor">#3a9ac4</Color>
+            <Color x:Key="TutorialNavigationBackgroundColor">#3a9ac4</Color>
+            <Color x:Key="ButtonBackgroundColor">#2e82a7</Color>
+            <Color x:Key="SeparatorColor">#2e82a7</Color>
 
             <!-- Styles for common elements -->
             <Style TargetType="Label">
@@ -34,6 +41,41 @@
                 </Setter>
                 <Setter Property="FontSize" Value="14" />
                 <Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
+            </Style>
+            
+            <Style TargetType="Entry">
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                      <OnPlatform x:TypeArguments="x:String">
+                        <OnPlatform.iOS>Ubuntu-Regular</OnPlatform.iOS>
+                      </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+            
+            <Style TargetType="local:BorderlessEntry">
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                      <OnPlatform x:TypeArguments="x:String">
+                        <OnPlatform.iOS>Ubuntu-Regular</OnPlatform.iOS>
+                      </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                      <OnPlatform x:TypeArguments="x:String">
+                        <OnPlatform.iOS>Ubuntu-Bold</OnPlatform.iOS>
+                      </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackgroundColor}" />
+                <Setter Property="TextColor" Value="White" />
             </Style>
         </ResourceDictionary>
 	</Application.Resources>

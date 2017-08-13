@@ -66,6 +66,10 @@
     </Compile>
     <Compile Include="Converters\HtmlToSourceConverter.cs" />
     <Compile Include="Controls\ExtendedWebView.cs" />
+    <Compile Include="Controls\MaterialEntry.xaml.cs">
+      <DependentUpon>MaterialEntry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BorderlessEntry.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
@@ -90,6 +94,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewCells\CheckMarkCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MaterialEntry.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
