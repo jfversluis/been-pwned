@@ -1,14 +1,11 @@
-<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Akavache;
 using BeenPwned.Api.Models;
 using BeenPwned.App.Core.Services;
-using FreshMvvm;
 using MvvmHelpers;
 using Xamarin.Forms;
 
@@ -17,7 +14,6 @@ namespace BeenPwned.App.Core.PageModels
     public class BreachesPageModel : BasePageModel
     {
         bool _isNavigating;
-        bool _dataLoaded;
 
 		private readonly ObservableRangeCollection<Breach> _breaches = new ObservableRangeCollection<Breach>();
         public ObservableCollection<Breach> Breaches { get { return _breaches; } }
@@ -34,20 +30,11 @@ namespace BeenPwned.App.Core.PageModels
 			}
 		}
 
-        protected override async void ViewIsAppearing(object sender, System.EventArgs e)
+        protected override void ViewIsAppearing(object sender, EventArgs e)
         {
             base.ViewIsAppearing(sender, e);
 
-            // To prevent this from reloading every time a user comes back to it while its in memory.
-            if (!_dataLoaded)
-            {
-                var breaches = await _pwnedClient.GetAllBreaches();
-
-                foreach (var breach in breaches)
-                    Breaches.Add(breach);
-
-                _dataLoaded = true;
-            }
+            GetBreaches();
         }
 
         public async Task OpenBreach(object breach)
@@ -61,7 +48,6 @@ namespace BeenPwned.App.Core.PageModels
 
 		public void GetBreaches(bool force = false)
 		{
-            // TODO move this up to service class
 			var cache = BlobCache.LocalMachine;
             cache.GetAndFetchLatest("breaches", GetRemoteBreaches,
 				offset =>
