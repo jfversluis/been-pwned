@@ -10,8 +10,8 @@
             <TableSection Title="Breach details">
                 <cells:BasicDataCell Label="Domain" Text="{Binding Breach.Domain}" />
                 <cells:BasicDataCell Label="Accounts" Text="{Binding Breach.NoOfAccounts, StringFormat='{0:0,0}'}" />
-                <cells:BasicDataCell Label="Breach date" Text="{Binding Breach.BreachDate, StringFormat='{0:dd-MM-yyyy}'}" />
-                <cells:BasicDataCell Label="Added date" Text="{Binding Breach.AddedDate, StringFormat='{0:dd-MM-yyyy}'}" />
+                <cells:BasicDataCell Label="Breach date" Text="{Binding Breach.BreachDate, StringFormat='{0:d}'}" />
+                <cells:BasicDataCell Label="Added date" Text="{Binding Breach.AddedDate, StringFormat='{0:d}'}" />
                 </TableSection>
             <TableSection Title="Status">
                 <cells:CheckMarkCell Checked="{Binding Breach.IsSensitive}" Label="Is sensitive" />
