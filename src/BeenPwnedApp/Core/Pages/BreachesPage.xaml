@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage Title="Breaches" NavigationPage.BackButtonTitle=""
+<ContentPage BackgroundColor="{StaticResource PageBackgroundColor}" Title="Breaches" NavigationPage.BackButtonTitle=""
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:BeenPwned.App.Core.Controls;assembly=BeenPwned.App.Core"
@@ -9,7 +9,7 @@
     x:Class="BeenPwned.App.Core.Pages.BreachesPage">
 	<ContentPage.Content>
         <Grid>
-            <ListView ItemsSource="{Binding Breaches}" HasUnevenRows="true" IsPullToRefreshEnabled="true"
+            <ListView x:Name="BreachesList" ItemsSource="{Binding Breaches}" HasUnevenRows="true" IsPullToRefreshEnabled="true"
                 RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsLoading}">
                 <ListView.Behaviors>
                     <behaviors:ListViewSelectedItemBehavior Command="{Binding OpenBreachCommand}" />
@@ -23,26 +23,17 @@
                                     <ColumnDefinition Width="*" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-                                
-                                <ffimageloading:CachedImage Grid.Column="0" Margin="10" HeightRequest="40" WidthRequest="80" 
-                                    DownsampleToViewSize="true" Source="{Binding ImageUrl}" />
 
+                                <ContentView Grid.Column="0">
+                                    <ffimageloading:CachedImage Margin="10" HeightRequest="40" WidthRequest="80" 
+                                        DownsampleToViewSize="true" Source="{Binding ., Converter={StaticResource BreachToImageUrlConverter}}" />
+                                </ContentView>
+                                
                                 <StackLayout VerticalOptions="Center" Grid.Column="1">
                                     <Label Margin="0,5,0,0" FontSize="16" Style="{StaticResource BoldLabel}" Text="{Binding Title}" />
                                     <Label Margin="0,-5,0,5" Text="{Binding Domain}" />
                                 </StackLayout>
-                                
-                              <!--  <StackLayout VerticalOptions="Center" Grid.Column="2">
-                                    <Label Margin="0,5,20,0" Style="{StaticResource BoldLabel}" Text="{Binding PwnCount}" />
-                                    <Label Margin="0,-5,20,5" FontSize="11" Text="ACCOUNTS" />
-                                </StackLayout>-->
                             </Grid>
-                            
-                         <!--   <StackLayout Orientation="Horizontal" HeightRequest="60">
-                                <StackLayout Orientation="Vertical">
-                                </StackLayout>
-                                <Label Text="{Binding PwnCount}" />
-                            </StackLayout>-->
                         </local:AccessoryViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

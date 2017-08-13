@@ -1,6 +1,8 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Akavache;
@@ -15,6 +17,7 @@ namespace BeenPwned.App.Core.PageModels
     public class BreachesPageModel : BasePageModel
     {
         bool _isNavigating;
+        bool _dataLoaded;
 
 		private readonly ObservableRangeCollection<Breach> _breaches = new ObservableRangeCollection<Breach>();
         public ObservableCollection<Breach> Breaches { get { return _breaches; } }
@@ -31,11 +34,20 @@ namespace BeenPwned.App.Core.PageModels
 			}
 		}
 
-        public override void Init(object initData)
+        protected override async void ViewIsAppearing(object sender, System.EventArgs e)
         {
-            base.Init(initData);
+            base.ViewIsAppearing(sender, e);
 
-            GetBreaches();
+            // To prevent this from reloading every time a user comes back to it while its in memory.
+            if (!_dataLoaded)
+            {
+                var breaches = await _pwnedClient.GetAllBreaches();
+
+                foreach (var breach in breaches)
+                    Breaches.Add(breach);
+
+                _dataLoaded = true;
+            }
         }
 
         public async Task OpenBreach(object breach)

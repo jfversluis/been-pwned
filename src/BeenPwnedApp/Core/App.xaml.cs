@@ -2,7 +2,9 @@
 using BeenPwned.App.Helpers;
 using FreshMvvm;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace BeenPwned.App
 {
     public partial class BeenPwnedApp : Application
