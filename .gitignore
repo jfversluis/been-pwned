@@ -288,3 +288,5 @@ __pycache__/
 *.xsd.cs
 
 src/BeenPwned.App/.droidres/.beenpwned.app.droidres.db
+
+src/BeenPwnedApp/.droidres/.beenpwned.app.droidres.db

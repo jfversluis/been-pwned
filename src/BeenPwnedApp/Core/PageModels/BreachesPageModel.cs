@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using BeenPwned.Api;
@@ -11,6 +12,7 @@ namespace BeenPwned.App.Core.PageModels
     public class BreachesPageModel : FreshBasePageModel
     {
         bool _isNavigating;
+        bool _dataLoaded;
 
         public ObservableCollection<Breach> Breaches { get; set; } = new ObservableCollection<Breach>();
         public ICommand OpenBreachCommand => new Command(async (item) => await OpenBreach(item), (arg) => !_isNavigating);
@@ -21,14 +23,20 @@ namespace BeenPwned.App.Core.PageModels
             _pwnedClient = new BeenPwnedClient("BeenPwned-iOS");
         }
 
-        public async override void Init(object initData)
+        protected override async void ViewIsAppearing(object sender, System.EventArgs e)
         {
-            base.Init(initData);
+            base.ViewIsAppearing(sender, e);
 
-            var breaches = await _pwnedClient.GetAllBreaches();
+            // To prevent this from reloading every time a user comes back to it while its in memory.
+            if (!_dataLoaded)
+            {
+                var breaches = await _pwnedClient.GetAllBreaches();
 
-            foreach (var breach in breaches)
-                Breaches.Add(breach);
+                foreach (var breach in breaches)
+                    Breaches.Add(breach);
+
+                _dataLoaded = true;
+            }
         }
 
         public async Task OpenBreach(object breach)

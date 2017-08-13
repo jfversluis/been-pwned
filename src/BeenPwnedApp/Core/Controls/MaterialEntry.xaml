@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:BeenPwned.App.Core.Controls;assembly=BeenPwned.App.Core"
+    x:Class="BeenPwned.App.Core.Controls.MaterialEntry">
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="1"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="HiddenLabel" FontSize="11" IsVisible="False" Margin="0,10,0,0"/>
+            <local:BorderlessEntry x:Name="EntryField" HeightRequest="30" Text="{Binding Text, Mode=TwoWay}"/>
+            <BoxView x:Name="BottomBorder" BackgroundColor="{StaticResource SeparatorColor}" Grid.Row="1" HeightRequest="1" Margin="0" HorizontalOptions="FillAndExpand"/>
+            <BoxView x:Name="HiddenBottomBorder" BackgroundColor="{StaticResource SeparatorColor}" Grid.Row="1" HeightRequest="1" Margin="0" WidthRequest="0" HorizontalOptions="Center"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

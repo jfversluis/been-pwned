@@ -1,8 +1,16 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage Title="Been pwned?" NavigationPage.BackButtonTitle="" 
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage BackgroundColor="{StaticResource PageBackgroundColor}" Title="Been pwned?" NavigationPage.BackButtonTitle="" 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:BeenPwned.App.Core.Controls;assembly=BeenPwned.App.Core"
     x:Class="BeenPwned.App.Core.Pages.MainPage">
-	<ContentPage.Content> 
+	<ContentPage.Content>
+        <Grid Padding="20">
+            <StackLayout Margin="0,30,0,0">
+                <Label Margin="0,0,0,30" Text="Check if you have an account that has been compromised in a data breach. A 'breach' is an incident where a site's data has been illegally accessed by hackers and then released publicly. Review the types of data that were compromised (email addresses, passwords, credit cards etc.) and take appropriate action, such as changing passwords." />
+                <local:MaterialEntry Margin="0,0,0,20" Placeholder="Email address or account name" />
+                <Button Text="Pwned?" />
+            </StackLayout>
+        </Grid>
 	</ContentPage.Content>
 </ContentPage>
