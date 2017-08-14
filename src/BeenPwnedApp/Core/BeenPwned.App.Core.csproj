@@ -56,6 +56,7 @@
     <Compile Include="Pages\PasswordPage.xaml.cs">
       <DependentUpon>PasswordPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\BeenPwnedService.cs" />
     <Compile Include="Converters\BreachToImageUrlConverter.cs" />
     <Compile Include="Helpers\Constants.cs" />
     <Compile Include="ViewCells\BasicDataCell.xaml.cs">
@@ -105,6 +106,7 @@
     <Folder Include="Models\" />
     <Folder Include="Models\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Services\" />
     <Folder Include="Converters\" />
     <Folder Include="ViewCells\" />
   </ItemGroup>

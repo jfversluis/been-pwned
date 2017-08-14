@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDisplayName</key>
-	<string>haveibeenpwned</string>
-	<key>CFBundleName</key>
-	<string>haveibeenpwned</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.versluisit.haveibeenpwned</string>
 	<key>CFBundleShortVersionString</key>
@@ -51,5 +47,7 @@
 		<string>Fonts/Ubuntu-Light.ttf</string>
 		<string>Fonts/Ubuntu-Regular.ttf</string>
 	</array>
+	<key>CFBundleName</key>
+	<string>been pwned?</string>
 </dict>
 </plist>
