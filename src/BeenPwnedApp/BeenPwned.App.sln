@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeenPwned.App.Transformatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeenPwned.App.Transformations", "BeenPwned.App.Transformations.iOS\BeenPwned.App.Transformations\BeenPwned.App.Transformations.csproj", "{4AA91ABE-1C27-470B-9443-295186A12D58}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeenPwned.App.Transformations.Droid", "BeenPwned.App.Transformations.iOS\BeenPwned.App.Transformations.Droid\BeenPwned.App.Transformations.Droid.csproj", "{38F9B838-EB29-4176-9622-4DA556CBC160}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,9 +85,22 @@ Global
 		{4AA91ABE-1C27-470B-9443-295186A12D58}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{4AA91ABE-1C27-470B-9443-295186A12D58}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{4AA91ABE-1C27-470B-9443-295186A12D58}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{38F9B838-EB29-4176-9622-4DA556CBC160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38F9B838-EB29-4176-9622-4DA556CBC160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38F9B838-EB29-4176-9622-4DA556CBC160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38F9B838-EB29-4176-9622-4DA556CBC160}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38F9B838-EB29-4176-9622-4DA556CBC160}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{38F9B838-EB29-4176-9622-4DA556CBC160}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{38F9B838-EB29-4176-9622-4DA556CBC160}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{38F9B838-EB29-4176-9622-4DA556CBC160}.Release|iPhone.Build.0 = Release|Any CPU
+		{38F9B838-EB29-4176-9622-4DA556CBC160}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{38F9B838-EB29-4176-9622-4DA556CBC160}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{38F9B838-EB29-4176-9622-4DA556CBC160}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{38F9B838-EB29-4176-9622-4DA556CBC160}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{ECEE434E-129E-4DF6-BCEE-D82584551AA5} = {CB99838E-4BF7-4B04-9697-D37C448380CE}
 		{4AA91ABE-1C27-470B-9443-295186A12D58} = {CB99838E-4BF7-4B04-9697-D37C448380CE}
+		{38F9B838-EB29-4176-9622-4DA556CBC160} = {CB99838E-4BF7-4B04-9697-D37C448380CE}
 	EndGlobalSection
 EndGlobal
