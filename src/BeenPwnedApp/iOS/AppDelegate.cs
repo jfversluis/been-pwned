@@ -18,6 +18,10 @@ namespace BeenPwned.App.iOS
             AnimationViewRenderer.Init();
             CachedImageRenderer.Init();
 
+            // TODO dummy to prevent the dll being trashed by the linker.
+            // Should be a better solution...
+            var foo = new FFImageLoading.Svg.Forms.SvgCachedImage();
+
             UIApplication.SharedApplication.SetStatusBarHidden(false, false);
 
             LoadApplication(new BeenPwnedApp());
