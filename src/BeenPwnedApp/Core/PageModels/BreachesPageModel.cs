@@ -16,22 +16,15 @@ namespace BeenPwned.App.Core.PageModels
         private readonly ObservableRangeCollection<Breach> _breaches = new ObservableRangeCollection<Breach>();
         public ObservableCollection<Breach> Breaches { get { return _breaches; } }
 
-        public ICommand OpenBreachCommand => new Command(async (item) => await OpenBreach(item), (arg) => !_isNavigating);
+        private ICommand _openBreachCommand;
+        public ICommand OpenBreachCommand => _openBreachCommand ?? (_openBreachCommand = new Command(async (item) => await OpenBreach(item), (arg) => !_isNavigating));
 
         private ICommand _refreshCommand;
-        public ICommand RefreshCommand
-        {
-            get
-            {
-                return _refreshCommand ??
-                    (_refreshCommand = new Command(ExecuteRefreshCommand));
-            }
-        }
+        public ICommand RefreshCommand => _refreshCommand ?? (_refreshCommand = new Command(ExecuteRefreshCommand));
 
         protected override void ViewIsAppearing(object sender, EventArgs e)
         {
             base.ViewIsAppearing(sender, e);
-
             ExecuteRefreshCommand();
         }
 
