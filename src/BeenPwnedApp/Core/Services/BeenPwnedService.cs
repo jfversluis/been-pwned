@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Akavache;
 using BeenPwned.Api;
 using BeenPwned.Api.Models;
@@ -23,6 +24,11 @@ namespace BeenPwned.App.Core.Services
                     var invalidate = (force || elapsed > new TimeSpan(24, 0, 0));
                     return invalidate;
                 });
+        }
+
+        internal async Task<IEnumerable<Breach>> GetBreachesForAccount(string account, string domain = "", bool includeUnverified = false)
+        {
+            return await _pwnedClient.GetBreachesForAccount(account, domain, false, includeUnverified);
         }
     }
 }
