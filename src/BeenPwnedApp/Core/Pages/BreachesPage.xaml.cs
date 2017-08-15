@@ -1,6 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
+using FFImageLoading;
+using FFImageLoading.Forms;
 using Xamarin.Forms;
 
 namespace BeenPwned.App.Core.Pages

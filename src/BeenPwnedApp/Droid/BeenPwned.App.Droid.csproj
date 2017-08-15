@@ -227,6 +227,10 @@
       <Project>{F2C0B4D9-96D5-4691-B624-D5868D16D996}</Project>
       <Name>BeenPwned.App.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BeenPwned.App.Transformations.iOS\BeenPwned.App.Transformations.Droid\BeenPwned.App.Transformations.Droid.csproj">
+      <Project>{38F9B838-EB29-4176-9622-4DA556CBC160}</Project>
+      <Name>BeenPwned.App.Transformations.Droid</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Compat.25.4.0.1\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.25.4.0.1\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets')" />

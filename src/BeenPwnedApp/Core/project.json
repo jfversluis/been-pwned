@@ -9,8 +9,9 @@
     "PropertyChanged.Fody": "2.1.3",
     "Refractored.MvvmHelpers": "1.3.0",
     "Xam.Plugins.Settings": "3.0.1",
-    "Xamarin.FFImageLoading.Forms": "2.2.10-pre-413",
-    "Xamarin.FFImageLoading.Svg.Forms": "2.2.10-pre-413",
+    "Xamarin.FFImageLoading.Forms": "2.2.10-pre-428",
+    "Xamarin.FFImageLoading.Svg.Forms": "2.2.10-pre-428",
+    "Xamarin.FFImageLoading.Transformations": "2.2.10-pre-428",
     "Xamarin.Forms": "2.3.5.256-pre6"
   },
   "frameworks": {
