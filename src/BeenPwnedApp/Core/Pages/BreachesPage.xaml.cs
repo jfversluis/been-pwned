@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using FFImageLoading;
@@ -12,22 +12,6 @@ namespace BeenPwned.App.Core.Pages
         public BreachesPage()
         {
             InitializeComponent();
-        }
-
-        void Handle_Success(object sender, FFImageLoading.Forms.CachedImageEvents.SuccessEventArgs e)
-        {
-            //    var image = sender as CachedImage;
-            //    var bytes = image.GetImageAsPngAsync();
-
-            //    // If it is not grayscale we can skip the transformations.
-            //    if (!IsGrayScale(bytes))
-            //        image.Transformations.Clear();
-            //}
-
-            //private static bool IsGrayScale(byte[] image)
-            //{
-            //var bitmap =
-
         }
 
         protected override void OnDisappearing()
