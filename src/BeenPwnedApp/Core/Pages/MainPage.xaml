@@ -26,7 +26,7 @@
             
             <StackLayout IsVisible="{Binding HasItems}" Padding="20" Grid.Row="1" BackgroundColor="#ba4343">
                 <Label HorizontalTextAlignment="Center" FontSize="18" Style="{StaticResource BoldLabel}" Text="Oh no — pwned!" TextColor="White" />
-                <Label HorizontalTextAlignment="Center" Text="{Binding Breaches.Count, StringFormat='Pwned on {0} breached site and found no pastes.'}" TextColor="White" />
+                <Label HorizontalTextAlignment="Center" Text="{Binding Breaches.Count, StringFormat='Pwned on {0} breached site(s).'}" TextColor="White" />
             </StackLayout>         
 
             <StackLayout IsVisible="{Binding HasItems, Converter={StaticResource InverseBoolConverter}}" Grid.Row="2" Padding="20,0,20,0" VerticalOptions="Center" Margin="0,-40,0,0">

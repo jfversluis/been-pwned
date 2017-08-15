@@ -11,5 +11,11 @@ namespace BeenPwned.App.Core.Pages
         {
             InitializeComponent();
         }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            BreachesList.SelectedItem = null;
+        }
     }
 }
