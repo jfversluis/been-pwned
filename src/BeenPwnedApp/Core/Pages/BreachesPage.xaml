@@ -27,7 +27,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <ContentView Grid.Column="0">
-                                    <ffimageloading:CachedImage Margin="10" HeightRequest="40" WidthRequest="80" Success="Handle_Success"
+                                    <ffimageloading:CachedImage Margin="10" HeightRequest="40" WidthRequest="80"
                                         DownsampleToViewSize="true" Source="{Binding ., Converter={StaticResource BreachToImageUrlConverter}}">
                                         <ffimageloading:CachedImage.Transformations>
                                             <transformations:SelectiveTintTransformation HexColor="#ff000000" EnableSolidColor="true" />
