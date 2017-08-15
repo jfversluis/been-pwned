@@ -11,8 +11,6 @@ namespace BeenPwned.App.Core.PageModels
 {
     public class BreachesPageModel : BasePageModel
     {
-        bool _isNavigating;
-
         private readonly ObservableRangeCollection<Breach> _breaches = new ObservableRangeCollection<Breach>();
         public ObservableCollection<Breach> Breaches { get { return _breaches; } }
 

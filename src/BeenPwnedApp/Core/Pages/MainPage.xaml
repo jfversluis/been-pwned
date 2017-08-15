@@ -8,8 +8,8 @@
         <Grid Padding="20">
             <StackLayout Margin="0,30,0,0">
                 <Label Margin="0,0,0,30" Text="Check if you have an account that has been compromised in a data breach. A 'breach' is an incident where a site's data has been illegally accessed by hackers and then released publicly. Review the types of data that were compromised (email addresses, passwords, credit cards etc.) and take appropriate action, such as changing passwords." />
-                <local:MaterialEntry Margin="0,0,0,20" Placeholder="Email address or account name" />
-                <Button Text="Pwned?" />
+                <local:MaterialEntry Text="{Binding Account, Mode=TwoWay}" Margin="0,0,0,20" Placeholder="Email address or account name" />
+                <Button Text="Pwned?" Command="{Binding CheckPwnedCommand}" CommandParameter="{Binding Account}" />
             </StackLayout>
         </Grid>
 	</ContentPage.Content>
