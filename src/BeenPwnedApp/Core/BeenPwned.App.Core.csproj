@@ -71,6 +71,7 @@
       <DependentUpon>MaterialEntry.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\BorderlessEntry.cs" />
+    <Compile Include="Converters\InverseBoolConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />

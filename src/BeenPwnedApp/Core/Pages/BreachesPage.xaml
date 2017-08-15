@@ -3,9 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:BeenPwned.App.Core.Controls;assembly=BeenPwned.App.Core"
-    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
-    xmlns:ffstatic="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading"
     xmlns:transformations="clr-namespace:BeenPwned.App.Transformations;assembly=BeenPwned.App.Transformations"
     xmlns:behaviors="clr-namespace:BeenPwned.App.Core.Behaviors;assembly=BeenPwned.App.Core"
     x:Class="BeenPwned.App.Core.Pages.BreachesPage">
@@ -27,12 +25,12 @@
                                 </Grid.ColumnDefinitions>
 
                                 <ContentView Grid.Column="0">
-                                    <ffimageloading:CachedImage Margin="10" HeightRequest="40" WidthRequest="80"
+                                    <ffimageloadingsvg:SvgCachedImage Margin="10" HeightRequest="40" WidthRequest="80"
                                         DownsampleToViewSize="true" Source="{Binding ., Converter={StaticResource BreachToImageUrlConverter}}">
-                                        <ffimageloading:CachedImage.Transformations>
+                                        <ffimageloadingsvg:SvgCachedImage.Transformations>
                                             <transformations:SelectiveTintTransformation HexColor="#ff000000" EnableSolidColor="true" />
-                                        </ffimageloading:CachedImage.Transformations>
-                                    </ffimageloading:CachedImage>
+                                        </ffimageloadingsvg:SvgCachedImage.Transformations>
+                                    </ffimageloadingsvg:SvgCachedImage>
                                 </ContentView>
                                 
                                 <StackLayout VerticalOptions="Center" Grid.Column="1">
