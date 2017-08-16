@@ -6,13 +6,14 @@ using BeenPwned.Api.Models;
 using BeenPwned.App.Core.Services;
 using MvvmHelpers;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace BeenPwned.App.Core.PageModels
 {
     public class BreachesPageModel : BasePageModel
     {
-        private readonly ObservableRangeCollection<Breach> _breaches = new ObservableRangeCollection<Breach>();
-        public ObservableCollection<Breach> Breaches { get { return _breaches; } }
+        private readonly ObservableRangeCollection<Grouping<string, Breach>> _breaches = new ObservableRangeCollection<Grouping<string, Breach>>();
+        public ObservableCollection<Grouping<string, Breach>> Breaches { get { return _breaches; } }
 
         private ICommand _openBreachCommand;
         public ICommand OpenBreachCommand => _openBreachCommand ?? (_openBreachCommand = new Command(async (item) => await OpenBreach(item), (arg) => !_isNavigating));
@@ -40,9 +41,14 @@ namespace BeenPwned.App.Core.PageModels
             IsLoading = true;
 
             BeenPwnedService.Instance.GetAllBreaches()
-                            .Subscribe((contributions) =>
+                            .Subscribe((breaches) =>
                 {
-                    _breaches.ReplaceRange(contributions);
+                    var sorted = from breach in breaches
+                                 orderby breach.Name
+                                 group breach by breach.Name[0].ToString().ToUpperInvariant() into breachGroup
+                                 select new Grouping<string, Breach>(breachGroup.Key, breachGroup);
+                
+                    _breaches.ReplaceRange(sorted);
                 });
 
             IsLoading = false;
