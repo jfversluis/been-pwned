@@ -202,7 +202,7 @@
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="BeenPwned.Api">
-      <HintPath>..\packages\BeenPwned.Api.1.0.12\lib\netstandard1.3\BeenPwned.Api.dll</HintPath>
+      <HintPath>..\packages\BeenPwned.Api.1.0.15\lib\netstandard1.3\BeenPwned.Api.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
