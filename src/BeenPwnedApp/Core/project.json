@@ -1,5 +1,6 @@
 ﻿{
   "dependencies": {
+    "Acr.UserDialogs": "6.5.1",
     "akavache": "5.0.0",
     "BeenPwned.Api": "1.0.12",
     "CarouselView.FormsPlugin": "4.4.2",
