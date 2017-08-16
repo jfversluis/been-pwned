@@ -10,7 +10,8 @@
 	<ContentPage.Content>
         <Grid>
             <ListView x:Name="BreachesList" ItemsSource="{Binding Breaches}" HasUnevenRows="true" IsPullToRefreshEnabled="true"
-                RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsLoading}">
+                RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsLoading}" GroupDisplayBinding="{Binding Key}"
+                GroupShortNameBinding="{Binding Key}" IsGroupingEnabled="true">
                 <ListView.Behaviors>
                     <behaviors:ListViewSelectedItemBehavior Command="{Binding OpenBreachCommand}" />
                 </ListView.Behaviors>
