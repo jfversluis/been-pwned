@@ -13,7 +13,7 @@ namespace BeenPwned.App.Core.PageModels
     public class BreachesPageModel : BasePageModel
     {
         private readonly ObservableRangeCollection<Grouping<string, Breach>> _breaches = new ObservableRangeCollection<Grouping<string, Breach>>();
-        public ObservableCollection<Grouping<string, Breach>> Breaches { get { return _breaches; } }
+        public ObservableCollection<Grouping<string, Breach>> Breaches => _breaches;
 
         private ICommand _openBreachCommand;
         public ICommand OpenBreachCommand => _openBreachCommand ?? (_openBreachCommand = new Command(async (item) => await OpenBreach(item), (arg) => !_isNavigating));
