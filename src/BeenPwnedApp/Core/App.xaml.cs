@@ -1,4 +1,5 @@
-﻿using BeenPwned.App.Core.PageModels;
+﻿using Akavache;
+using BeenPwned.App.Core.PageModels;
 using BeenPwned.App.Helpers;
 using FreshMvvm;
 using Xamarin.Forms;
@@ -14,6 +15,8 @@ namespace BeenPwned.App
         public BeenPwnedApp()
         {
             InitializeComponent();
+
+            BlobCache.ApplicationName = "BeenPwned";
 
             Instance = this;
 
