@@ -200,6 +200,7 @@
     </Reference>
     <Reference Include="FFImageLoading.Transformations">
       <HintPath>..\packages\Xamarin.FFImageLoading.Transformations.2.2.10-pre-438\lib\Xamarin.iOS10\FFImageLoading.Transformations.dll</HintPath>
+    </Reference>
     <Reference Include="BeenPwned.Api">
       <HintPath>..\packages\BeenPwned.Api.1.0.15\lib\netstandard1.3\BeenPwned.Api.dll</HintPath>
     </Reference>
