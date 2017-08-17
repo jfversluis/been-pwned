@@ -202,6 +202,9 @@
     <Reference Include="FFImageLoading.Svg.Forms">
       <HintPath>..\packages\Xamarin.FFImageLoading.Svg.Forms.2.2.10-pre-438\lib\MonoAndroid10\FFImageLoading.Svg.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="BeenPwned.Api">
+      <HintPath>..\packages\BeenPwned.Api.1.0.15\lib\netstandard1.3\BeenPwned.Api.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

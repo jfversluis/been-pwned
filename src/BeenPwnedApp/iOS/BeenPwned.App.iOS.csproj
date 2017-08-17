@@ -180,9 +180,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="BeenPwned.Api">
-      <HintPath>..\packages\BeenPwned.Api.1.0.12\lib\netstandard1.3\BeenPwned.Api.dll</HintPath>
-    </Reference>
     <Reference Include="FFImageLoading">
       <HintPath>..\packages\Xamarin.FFImageLoading.2.2.10-pre-438\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
     </Reference>
@@ -203,6 +200,8 @@
     </Reference>
     <Reference Include="FFImageLoading.Transformations">
       <HintPath>..\packages\Xamarin.FFImageLoading.Transformations.2.2.10-pre-438\lib\Xamarin.iOS10\FFImageLoading.Transformations.dll</HintPath>
+    <Reference Include="BeenPwned.Api">
+      <HintPath>..\packages\BeenPwned.Api.1.0.15\lib\netstandard1.3\BeenPwned.Api.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
