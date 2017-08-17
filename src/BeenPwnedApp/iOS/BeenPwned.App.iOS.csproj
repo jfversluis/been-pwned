@@ -172,29 +172,8 @@
     <Reference Include="Akavache.Sqlite3">
       <HintPath>..\packages\akavache.sqlite3.5.0.0\lib\Portable-Net45+Win8+WP8+Wpa81\Akavache.Sqlite3.dll</HintPath>
     </Reference>
-    <Reference Include="FFImageLoading">
-      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.10-pre-428\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
-    </Reference>
-    <Reference Include="FFImageLoading.Platform">
-      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.10-pre-428\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="FFImageLoading.Transformations">
-      <HintPath>..\packages\Xamarin.FFImageLoading.Transformations.2.2.10-pre-428\lib\Xamarin.iOS10\FFImageLoading.Transformations.dll</HintPath>
-    </Reference>
     <Reference Include="SkiaSharp">
       <HintPath>..\packages\SkiaSharp.1.59.1\lib\XamariniOS\SkiaSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="FFImageLoading.Svg.Platform">
-      <HintPath>..\packages\Xamarin.FFImageLoading.Svg.2.2.10-pre-428\lib\Xamarin.iOS10\FFImageLoading.Svg.Platform.dll</HintPath>
-    </Reference>
-    <Reference Include="FFImageLoading.Forms">
-      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.10-pre-428\lib\Xamarin.iOS10\FFImageLoading.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="FFImageLoading.Forms.Touch">
-      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.10-pre-428\lib\Xamarin.iOS10\FFImageLoading.Forms.Touch.dll</HintPath>
-    </Reference>
-    <Reference Include="FFImageLoading.Svg.Forms">
-      <HintPath>..\packages\Xamarin.FFImageLoading.Svg.Forms.2.2.10-pre-428\lib\Xamarin.iOS10\FFImageLoading.Svg.Forms.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
@@ -203,6 +182,27 @@
     </Reference>
     <Reference Include="BeenPwned.Api">
       <HintPath>..\packages\BeenPwned.Api.1.0.12\lib\netstandard1.3\BeenPwned.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.10-pre-438\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.10-pre-438\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.10-pre-438\lib\Xamarin.iOS10\FFImageLoading.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms.Touch">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.10-pre-438\lib\Xamarin.iOS10\FFImageLoading.Forms.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Svg.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Svg.2.2.10-pre-438\lib\Xamarin.iOS10\FFImageLoading.Svg.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Svg.Forms">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Svg.Forms.2.2.10-pre-438\lib\Xamarin.iOS10\FFImageLoading.Svg.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Transformations">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Transformations.2.2.10-pre-438\lib\Xamarin.iOS10\FFImageLoading.Transformations.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
