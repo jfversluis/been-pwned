@@ -4,9 +4,19 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:BeenPwned.App.Core.Controls;assembly=BeenPwned.App.Core"
     xmlns:cells="clr-namespace:BeenPwned.App.Core.ViewCells;assembly=BeenPwned.App.Core"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     x:Class="BeenPwned.App.Core.Pages.BreachPage">
 	<ContentPage.Content>
-        <TableView Intent="Form" HasUnevenRows="true">
+        <TableView Intent="Form" HasUnevenRows="true" Margin="0,-45,0,0">
+            <TableSection>
+                <ViewCell>
+                    <StackLayout BackgroundColor="#191919" HeightRequest="90">
+                        <ffimageloadingsvg:SvgCachedImage Margin="0,30,0,0" HeightRequest="40" WidthRequest="80" HorizontalOptions="Center" VerticalOptions="Center"
+                            DownsampleToViewSize="true" Source="{Binding Breach, Converter={StaticResource BreachToImageUrlConverter}}">
+                        </ffimageloadingsvg:SvgCachedImage>
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
             <TableSection Title="Breach details">
                 <cells:BasicDataCell Label="Domain" Text="{Binding Breach.Domain}" />
                 <cells:BasicDataCell Label="Accounts" Text="{Binding Breach.NoOfAccounts, StringFormat='{0:0,0}'}" />
