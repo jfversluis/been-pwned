@@ -9,13 +9,13 @@
 	<ContentPage.Content>
         <TableView Intent="Form" HasUnevenRows="true" Margin="0,-45,0,0">
             <TableSection>
-                <ViewCell>
+                <cells:UnselectableCell>
                     <StackLayout BackgroundColor="#191919" HeightRequest="90">
                         <ffimageloadingsvg:SvgCachedImage Margin="0,30,0,0" HeightRequest="40" WidthRequest="80" HorizontalOptions="Center" VerticalOptions="Center"
                             DownsampleToViewSize="true" Source="{Binding Breach, Converter={StaticResource BreachToImageUrlConverter}}">
                         </ffimageloadingsvg:SvgCachedImage>
                     </StackLayout>
-                </ViewCell>
+                </cells:UnselectableCell>
             </TableSection>
             <TableSection Title="Breach details">
                 <cells:BasicDataCell Label="Domain" Text="{Binding Breach.Domain}" />
