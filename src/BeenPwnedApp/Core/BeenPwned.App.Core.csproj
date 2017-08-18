@@ -59,12 +59,6 @@
     <Compile Include="Services\BeenPwnedService.cs" />
     <Compile Include="Converters\BreachToImageUrlConverter.cs" />
     <Compile Include="Helpers\Constants.cs" />
-    <Compile Include="ViewCells\BasicDataCell.xaml.cs">
-      <DependentUpon>BasicDataCell.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewCells\CheckMarkCell.xaml.cs">
-      <DependentUpon>CheckMarkCell.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Converters\HtmlToSourceConverter.cs" />
     <Compile Include="Controls\ExtendedWebView.cs" />
     <Compile Include="Controls\MaterialEntry.xaml.cs">
@@ -72,6 +66,7 @@
     </Compile>
     <Compile Include="Controls\BorderlessEntry.cs" />
     <Compile Include="Converters\InverseBoolConverter.cs" />
+    <Compile Include="ViewCells\UnselectableCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
@@ -90,12 +85,6 @@
     </EmbeddedResource>
     <None Include="FodyWeavers.xml" />
     <EmbeddedResource Include="Pages\PasswordPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewCells\BasicDataCell.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewCells\CheckMarkCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MaterialEntry.xaml">
