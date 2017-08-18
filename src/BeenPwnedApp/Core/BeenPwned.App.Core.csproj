@@ -98,7 +98,6 @@
     <Folder Include="Helpers\" />
     <Folder Include="Services\" />
     <Folder Include="Converters\" />
-    <Folder Include="ViewCells\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BeenPwned.App.Transformations.iOS\BeenPwned.App.Transformations\BeenPwned.App.Transformations.csproj">

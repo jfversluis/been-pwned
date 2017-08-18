@@ -198,9 +198,6 @@
     <Reference Include="FFImageLoading.Transformations">
       <HintPath>..\packages\Xamarin.FFImageLoading.Transformations.2.2.10-pre-438\lib\Xamarin.iOS10\FFImageLoading.Transformations.dll</HintPath>
     </Reference>
-    <Reference Include="BeenPwned.Api">
-      <HintPath>..\packages\BeenPwned.Api.1.0.15\lib\netstandard1.3\BeenPwned.Api.dll</HintPath>
-    </Reference>
     <Reference Include="Acr.Support.iOS">
       <HintPath>..\packages\Acr.Support.2.1.0\lib\Xamarin.iOS10\Acr.Support.iOS.dll</HintPath>
     </Reference>
@@ -215,6 +212,9 @@
     </Reference>
     <Reference Include="Acr.UserDialogs.Interface">
       <HintPath>..\packages\Acr.UserDialogs.6.5.1\lib\Xamarin.iOS10\Acr.UserDialogs.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="BeenPwned.Api">
+      <HintPath>..\packages\BeenPwned.Api.1.0.17\lib\netstandard1.3\BeenPwned.Api.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -242,7 +242,6 @@
     <Compile Include="AkavacheSqliteLinkerOverride.cs" />
     <Compile Include="Renderers\ExtendedWebViewRenderer.cs" />
     <Compile Include="Renderers\BorderlessEntryRenderer.cs" />
-    <Compile Include="Renderers\UnselectableCellRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\BeenPwned.App.Core.csproj">

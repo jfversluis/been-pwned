@@ -2,7 +2,7 @@
   "dependencies": {
     "Acr.UserDialogs": "6.5.1",
     "akavache": "5.0.0",
-    "BeenPwned.Api": "1.0.15",
+    "BeenPwned.Api": "1.0.17",
     "CarouselView.FormsPlugin": "4.4.2",
     "Com.Airbnb.Xamarin.Forms.Lottie": "2.3.1",
     "Fody": "2.1.2",
