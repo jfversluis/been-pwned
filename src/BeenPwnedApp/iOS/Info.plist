@@ -46,8 +46,9 @@
 		<string>Fonts/Ubuntu-Bold.ttf</string>
 		<string>Fonts/Ubuntu-Light.ttf</string>
 		<string>Fonts/Ubuntu-Regular.ttf</string>
+		<string>Fonts/Password-Dots.ttf</string>
 		<string>Fonts/fontawesome.ttf</string>
-	</array>
+  </array>
 	<key>CFBundleName</key>
 	<string>been pwned?</string>
 </dict>

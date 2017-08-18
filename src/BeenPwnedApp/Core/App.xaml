@@ -9,6 +9,7 @@
             <converters:BreachToImageUrlConverter x:Key="BreachToImageUrlConverter" />
             <converters:HtmlToSourceConverter x:Key="HtmlToSourceConverter" />
             <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+            <converters:StringLengthToBoolConverter x:Key="StringLengthToBoolConverter" />
             
             <!-- Our custom colors -->
             <Color x:Key="MainTextColor">#00171F</Color>
