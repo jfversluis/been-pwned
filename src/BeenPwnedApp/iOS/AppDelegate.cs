@@ -1,4 +1,5 @@
-﻿using CarouselView.FormsPlugin.iOS;
+﻿using System;
+using CarouselView.FormsPlugin.iOS;
 using FFImageLoading.Forms.Touch;
 using Foundation;
 using Lottie.Forms.iOS.Renderers;
@@ -23,7 +24,6 @@ namespace BeenPwned.App.iOS
             var foo = new FFImageLoading.Svg.Forms.SvgCachedImage();
 
             UIApplication.SharedApplication.SetStatusBarHidden(false, false);
-
             LoadApplication(new BeenPwnedApp());
 
             UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
