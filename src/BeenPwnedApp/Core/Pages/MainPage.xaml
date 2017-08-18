@@ -15,7 +15,13 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             
-            <SearchBar BackgroundColor="{StaticResource NavigationBackgroundColor}" CancelButtonColor="White" Grid.Row="0" Placeholder="Email address or account name" FontSize="13" Text="{Binding Filter}" SearchCommand="{Binding CheckPwnedCommand}" HeightRequest="40" />
+            <SearchBar BackgroundColor="{StaticResource NavigationBackgroundColor}" CancelButtonColor="White" Grid.Row="0" Placeholder="Email address or account name" FontSize="13" Text="{Binding Filter}" SearchCommand="{Binding CheckPwnedCommand}" HeightRequest="40">
+                <SearchBar.TextColor>
+                    <OnPlatform x:TypeArguments="Color">
+                        <On Platform="Android" Value="White" />
+                    </OnPlatform>
+                </SearchBar.TextColor>
+            </SearchBar>
 
             <StackLayout IsVisible="{Binding HasSearched}" Padding="20" Grid.Row="1" BackgroundColor="#348f38">
                 <Label HorizontalTextAlignment="Center" FontSize="18" Style="{StaticResource BoldLabel}" Text="Good news — no pwnage found!" TextColor="White" />

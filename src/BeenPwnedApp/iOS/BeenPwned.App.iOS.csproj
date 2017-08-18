@@ -275,8 +275,8 @@
     <BundleResource Include="Resources\icon-password%403x.png" />
     <BundleResource Include="Resources\check.png" />
     <BundleResource Include="Resources\nocheck.png" />
-    <BundleResource Include="Resources\icon-pwned-color.png" />
-    <BundleResource Include="Resources\icon-password-color.png" />
+    <BundleResource Include="Resources\icon_pwned_color.png" />
+    <BundleResource Include="Resources\icon_password_color.png" />
     <BundleResource Include="Resources\Fonts\Password-Dots.ttf" />
     <BundleResource Include="Resources\Fonts\fontawesome.ttf" />
   </ItemGroup>

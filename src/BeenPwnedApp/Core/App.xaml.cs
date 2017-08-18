@@ -40,9 +40,9 @@ namespace BeenPwned.App
         {
             var tabbed = new FreshTabbedNavigationContainer();
 
-            tabbed.AddTab<MainPageModel>("Been pwned?", "icon-pwned.png");
-            tabbed.AddTab<BreachesPageModel>("Breaches", "icon-breaches.png");
-            tabbed.AddTab<PasswordPageModel>("Passwords", "icon-password.png");
+            tabbed.AddTab<MainPageModel>("Been pwned?", Device.RuntimePlatform == Device.iOS ? "icon-pwned.png" : null);
+            tabbed.AddTab<BreachesPageModel>("Breaches", Device.RuntimePlatform == Device.iOS ? "icon-breaches.png" : null);
+            tabbed.AddTab<PasswordPageModel>("Passwords", Device.RuntimePlatform == Device.iOS ? "icon-password.png" : null);
 
             MainPage = tabbed;
         }
