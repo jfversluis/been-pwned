@@ -30,5 +30,10 @@ namespace BeenPwned.App.Core.Services
         {
             return await _pwnedClient.GetBreachesForAccount(account, domain, false, includeUnverified);
         }
+
+        internal async Task<bool> GetIsPasswordPwned(string password)
+        {
+            return await _pwnedClient.GetPwnedPassword(password);
+        }
     }
 }

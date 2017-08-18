@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows.Input;
-using BeenPwned.Api;
 using BeenPwned.Api.Models;
 using BeenPwned.App.Core.Services;
 using MvvmHelpers;
-using PropertyChanged;
 using Xamarin.Forms;
 
 namespace BeenPwned.App.Core.PageModels
@@ -52,20 +48,13 @@ namespace BeenPwned.App.Core.PageModels
             HasSearched = false;
             IsLoading = true;
 
-            try
-            {
-                var resultBreaches = await BeenPwnedService.Instance.GetBreachesForAccount(Filter);
-                Breaches.ReplaceRange(resultBreaches);
-                HasItems = Breaches.Count > 0;
-                IsLoading = false;
-            }
-            catch (BeenPwnedUnavailableException ex)
-            {
-                // HACK: For now because when your account is not found it
-                // throws an exception in the current API.
-                HasItems = false;
-                HasSearched = true;
-            }
+            var resultBreaches = await BeenPwnedService.Instance.GetBreachesForAccount(Filter);
+            Breaches.ReplaceRange(resultBreaches);
+            HasItems = Breaches.Count > 0;
+            IsLoading = false;
+
+            HasItems = false;
+            HasSearched = true;
         }
 
         public async Task OpenBreach(object breach)
