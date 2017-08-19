@@ -43,8 +43,13 @@ namespace BeenPwned.App.iOS.Renderers
 				if (UIDevice.CurrentDevice.CheckSystemVersion(9, 0))
 				{
                     using (var sfViewController = new SFSafariViewController(request.Url, false))
-					{
-                        UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.Default, true);
+                    {
+                        try
+                        {
+                            sfViewController.PreferredBarTintColor = ((Color)BeenPwnedApp.Current.Resources["NavigationBackgroundColor"]).ToUIColor();
+                        }
+                        catch { } // Intentionally left blank, no worries if the color cannot be set
+
 						UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(sfViewController, true, null);
 					}
 				}
