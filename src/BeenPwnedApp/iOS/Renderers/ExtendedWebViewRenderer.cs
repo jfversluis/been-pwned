@@ -1,7 +1,7 @@
-﻿using System;
-using BeenPwned.App.Core.Controls;
+﻿using BeenPwned.App.Core.Controls;
 using BeenPwned.App.iOS.Renderers;
 using Foundation;
+using SafariServices;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -16,11 +16,11 @@ namespace BeenPwned.App.iOS.Renderers
             base.OnElementChanged(e);
 
             // Bugfix to get rid of the black line at the bottom.
-            this.Opaque = false;
-            this.BackgroundColor = UIColor.Clear;
+            Opaque = false;
+            BackgroundColor = UIColor.Clear;
 
-            this.ScrollView.ScrollEnabled = false;
-            this.ScrollView.Bounces = false;
+            ScrollView.ScrollEnabled = false;
+            ScrollView.Bounces = false;
 
             Delegate = new ExtendedUIWebViewDelegate(this);
         }
@@ -39,7 +39,19 @@ namespace BeenPwned.App.iOS.Renderers
         {
             if (navigationType == UIWebViewNavigationType.LinkClicked)
             {
-                UIApplication.SharedApplication.OpenUrl(request.Url);
+                
+				if (UIDevice.CurrentDevice.CheckSystemVersion(9, 0))
+				{
+                    using (var sfViewController = new SFSafariViewController(request.Url, false))
+					{
+                        UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.Default, true);
+						UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(sfViewController, true, null);
+					}
+				}
+				else
+				{
+                    UIApplication.SharedApplication.OpenUrl(request.Url);
+				}
                 return false;
             }
 
