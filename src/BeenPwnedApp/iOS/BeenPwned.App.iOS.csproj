@@ -219,6 +219,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -242,6 +243,7 @@
     <Compile Include="AkavacheSqliteLinkerOverride.cs" />
     <Compile Include="Renderers\ExtendedWebViewRenderer.cs" />
     <Compile Include="Renderers\BorderlessEntryRenderer.cs" />
+    <Compile Include="Services\BrowserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\BeenPwned.App.Core.csproj">

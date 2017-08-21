@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using BeenPwned.Api.Models;
+using BeenPwned.App.Core.Models;
 using BeenPwned.App.Core.Services;
 using MvvmHelpers;
 using Xamarin.Forms;
@@ -10,8 +13,7 @@ namespace BeenPwned.App.Core.PageModels
 {
     public class MainPageModel : BasePageModel
     {
-        public ObservableRangeCollection<Breach> Breaches { get; set; } = new ObservableRangeCollection<Breach>();
-        public ObservableRangeCollection<Paste> Pastes { get; set; } = new ObservableRangeCollection<Paste>();
+        public ObservableRangeCollection<SearchListGroup> BreachesAndPastes { get; set; } = new ObservableRangeCollection<SearchListGroup>();
 
         public bool HasItems { get; set; }
         public bool HasSearched { get; set; }
@@ -27,8 +29,7 @@ namespace BeenPwned.App.Core.PageModels
 
                 if (string.IsNullOrEmpty(_filter))
                 {
-                    Breaches.Clear();
-                    Pastes.Clear();
+                    BreachesAndPastes.Clear();
                     HasItems = false;
                     HasSearched = false;
                 }
@@ -43,6 +44,24 @@ namespace BeenPwned.App.Core.PageModels
 
         public string BreachedDescription { get; set; }
 
+        public MainPageModel()
+        {
+			BreachesAndPastes.Add(new SearchListGroup("Breaches"));
+			BreachesAndPastes.Add(new SearchListGroup("Pastes"));
+        }
+
+        public async Task OpenBreach(object breachOrPaste)
+		{
+			_isNavigating = true;
+
+            if (breachOrPaste is Breach)
+			    await CoreMethods.PushPageModel<BreachPageModel>(breachOrPaste, false, true);
+            else if (breachOrPaste is Paste)
+				await CoreMethods.PushPageModel<PastePageModel>(breachOrPaste, false, true);
+
+			_isNavigating = false;
+		}
+
         private async Task CheckPwned()
         {
             HasItems = false;
@@ -50,33 +69,26 @@ namespace BeenPwned.App.Core.PageModels
             IsLoading = true;
 
             var resultBreaches = await BeenPwnedService.Instance.GetBreachesForAccount(Filter);
-            Breaches.ReplaceRange(resultBreaches);
+            BreachesAndPastes.Single(b => b.Name == "Breaches").ReplaceRange(resultBreaches);
+
+            IEnumerable<Paste> resultPastes = null;
 
             try
             {
-                var resultPastes = await BeenPwnedService.Instance.GetPastesForAccount(Filter);
-                Pastes.ReplaceRange(resultPastes);
+                resultPastes = await BeenPwnedService.Instance.GetPastesForAccount(Filter);
+                BreachesAndPastes.Single(b => b.Name == "Pastes").ReplaceRange(resultPastes);
             }
-            catch(ArgumentException)
+            catch (ArgumentException)
             {
                 // If the given acount is not a (valid) e-mailaddress an ArgumentException will be thrown
-                Pastes.Clear();
+                BreachesAndPastes.Single(b => b.Name == "Pastes").Clear();
             }
 
-            HasItems = Breaches.Count > 0 || Pastes.Count > 0;
-            BreachedDescription = $"Pwned on {Breaches.Count} breached site(s) and found {Pastes.Count} paste(s).";
+            HasItems = BreachesAndPastes.Count > 0;
+            BreachedDescription = $"Pwned on {resultBreaches.Count()} breached site(s) and found {resultPastes?.Count()} paste(s).";
 
             IsLoading = false;
             HasSearched = true;
-        }
-
-        public async Task OpenBreach(object breach)
-        {
-            _isNavigating = true;
-
-            await CoreMethods.PushPageModel<BreachPageModel>(breach, false, true);
-
-            _isNavigating = false;
         }
     }
 }
