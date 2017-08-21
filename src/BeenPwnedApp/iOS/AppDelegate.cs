@@ -2,6 +2,7 @@
 using FFImageLoading.Forms.Touch;
 using Foundation;
 using Lottie.Forms.iOS.Renderers;
+using StoreKit;
 using UIKit;
 using Xamarin.Forms;
 
@@ -26,6 +27,10 @@ namespace BeenPwned.App.iOS
             LoadApplication(new BeenPwnedApp());
 
             UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
+
+            // Periodically let the app ask for a review
+			if (UIDevice.CurrentDevice.CheckSystemVersion(10, 3))
+				SKStoreReviewController.RequestReview();
 
             return base.FinishedLaunching(uiApplication, launchOptions);
         }
