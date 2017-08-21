@@ -1,5 +1,4 @@
-﻿using System;
-using CarouselView.FormsPlugin.iOS;
+﻿using CarouselView.FormsPlugin.iOS;
 using FFImageLoading.Forms.Touch;
 using Foundation;
 using Lottie.Forms.iOS.Renderers;
