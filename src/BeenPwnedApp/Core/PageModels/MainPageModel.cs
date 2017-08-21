@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using BeenPwned.Api.Models;
 using BeenPwned.App.Core.Services;
@@ -9,7 +10,9 @@ namespace BeenPwned.App.Core.PageModels
 {
     public class MainPageModel : BasePageModel
     {
-        public ObservableRangeCollection<Breach> Breaches { get; set; }
+        public ObservableRangeCollection<Breach> Breaches { get; set; } = new ObservableRangeCollection<Breach>();
+        public ObservableRangeCollection<Paste> Pastes { get; set; } = new ObservableRangeCollection<Paste>();
+
         public bool HasItems { get; set; }
         public bool HasSearched { get; set; }
 
@@ -37,10 +40,7 @@ namespace BeenPwned.App.Core.PageModels
         private ICommand _checkPwnedCommand;
         public ICommand CheckPwnedCommand => _checkPwnedCommand ?? (_checkPwnedCommand = new Command(async (arg) => await CheckPwned(), (arg) => !_isNavigating));
 
-        public MainPageModel()
-        {
-            Breaches = new ObservableRangeCollection<Breach>();
-        }
+        public string BreachedDescription { get; set; }
 
         private async Task CheckPwned()
         {
@@ -50,10 +50,22 @@ namespace BeenPwned.App.Core.PageModels
 
             var resultBreaches = await BeenPwnedService.Instance.GetBreachesForAccount(Filter);
             Breaches.ReplaceRange(resultBreaches);
-            HasItems = Breaches.Count > 0;
-            IsLoading = false;
 
-            HasItems = false;
+            try
+            {
+                var resultPastes = await BeenPwnedService.Instance.GetPastesForAccount(Filter);
+                Pastes.ReplaceRange(resultPastes);
+            }
+            catch(ArgumentException)
+            {
+                // If the given acount is not a (valid) e-mailaddress an ArgumentException will be thrown
+                Pastes.Clear();
+            }
+
+            HasItems = Breaches.Count > 0 || Pastes.Count > 0;
+            BreachedDescription = $"Pwned on {Breaches.Count} breached site(s) and found {Pastes.Count} paste(s).";
+
+            IsLoading = false;
             HasSearched = true;
         }
 
