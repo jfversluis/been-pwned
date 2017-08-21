@@ -28,6 +28,7 @@ namespace BeenPwned.App.Core.PageModels
                 if (string.IsNullOrEmpty(_filter))
                 {
                     Breaches.Clear();
+                    Pastes.Clear();
                     HasItems = false;
                     HasSearched = false;
                 }
