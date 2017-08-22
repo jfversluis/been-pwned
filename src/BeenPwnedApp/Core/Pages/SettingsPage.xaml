@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:BeenPwned.App.Core.Controls;assembly=BeenPwned.App.Core" x:Class="BeenPwned.App.Core.Pages.SettingsPage">
+    <TableView Intent="Settings">
+        <TableView.Root>
+            <TableSection Title="Settings">
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="Push notifications" />
+                            <Label Margin="20,-5,0,5" Text="{Binding Domain}" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+            </TableSection>
+            <TableSection Title="About">
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="Open-source on GitHub" />
+                            <Label Margin="20,-5,0,5" Text="{Binding Domain}" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="Disclaimer" />
+                            <Label Margin="20,-5,0,5" Text="{Binding Domain}" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+            </TableSection>
+            <TableSection Title="Used open-source libraries">
+                
+            </TableSection>
+        </TableView.Root>
+    </TableView>
+</ContentPage>

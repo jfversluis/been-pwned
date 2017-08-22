@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage BackgroundColor="{StaticResource PageBackgroundColor}" Title="Been pwned?" NavigationPage.BackButtonTitle="" 
+<pages:BasePage BackgroundColor="{StaticResource PageBackgroundColor}" Title="Been pwned?" NavigationPage.BackButtonTitle="" 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:BeenPwned.App.Core.Controls;assembly=BeenPwned.App.Core"
     xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:transformations="clr-namespace:BeenPwned.App.Transformations;assembly=BeenPwned.App.Transformations"
     xmlns:behaviors="clr-namespace:BeenPwned.App.Core.Behaviors;assembly=BeenPwned.App.Core"
+    xmlns:pages="clr-namespace:BeenPwned.App.Core.Pages;assembly=BeenPwned.App.Core"
     x:Class="BeenPwned.App.Core.Pages.MainPage">
 	<ContentPage.Content>
          <Grid RowSpacing="0" ColumnSpacing="0">
@@ -66,4 +67,4 @@
             </ListView>
         </Grid>
 	</ContentPage.Content>
-</ContentPage>
+</pages:BasePage>

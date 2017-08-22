@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Xamarin.Forms;
-
-namespace BeenPwned.App.Core.Pages
+﻿namespace BeenPwned.App.Core.Pages
 {
-    public partial class PasswordPage : ContentPage
+    public partial class PasswordPage : BasePage
     {
         public PasswordPage()
         {
