@@ -67,6 +67,13 @@
     <Compile Include="Controls\BorderlessEntry.cs" />
     <Compile Include="Converters\InverseBoolConverter.cs" />
     <Compile Include="Converters\StringLengthToBoolConverter.cs" />
+    <Compile Include="Models\SearchListGroup.cs" />
+    <Compile Include="PageModels\PastePageModel.cs" />
+    <Compile Include="Pages\PastePage.xaml.cs">
+      <DependentUpon>PastePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataTemplateSelectors\BreachOrPageTemplateSelector.cs" />
+    <Compile Include="Interfaces\IBrowserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
@@ -90,6 +97,9 @@
     <EmbeddedResource Include="Controls\MaterialEntry.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PastePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
@@ -98,6 +108,8 @@
     <Folder Include="Helpers\" />
     <Folder Include="Services\" />
     <Folder Include="Converters\" />
+    <Folder Include="DataTemplateSelectors\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BeenPwned.App.Transformations.iOS\BeenPwned.App.Transformations\BeenPwned.App.Transformations.csproj">

@@ -1,69 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage BackgroundColor="{StaticResource PageBackgroundColor}" Title="Been pwned?" NavigationPage.BackButtonTitle="" 
-    xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    xmlns:local="clr-namespace:BeenPwned.App.Core.Controls;assembly=BeenPwned.App.Core"
-    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
-    xmlns:transformations="clr-namespace:BeenPwned.App.Transformations;assembly=BeenPwned.App.Transformations"
-    xmlns:behaviors="clr-namespace:BeenPwned.App.Core.Behaviors;assembly=BeenPwned.App.Core"
-    x:Class="BeenPwned.App.Core.Pages.MainPage">
-	<ContentPage.Content>
-         <Grid RowSpacing="0" ColumnSpacing="0">
+<ContentPage BackgroundColor="{StaticResource PageBackgroundColor}" Title="Been pwned?" NavigationPage.BackButtonTitle="" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:BeenPwned.App.Core.Controls;assembly=BeenPwned.App.Core" xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" xmlns:transformations="clr-namespace:BeenPwned.App.Transformations;assembly=BeenPwned.App.Transformations" xmlns:behaviors="clr-namespace:BeenPwned.App.Core.Behaviors;assembly=BeenPwned.App.Core" x:Class="BeenPwned.App.Core.Pages.MainPage" xmlns:templates="clr-namespace:BeenPwned.App.Core.DataTemplateSelectors;assembly=BeenPwned.App.Core">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="breachCellTemplate">
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <ContentView Grid.Column="0">
+                            <ffimageloadingsvg:SvgCachedImage Margin="10" HeightRequest="40" WidthRequest="80" DownsampleToViewSize="true" Source="{Binding ., Converter={StaticResource BreachToImageUrlConverter}}">
+                                <ffimageloadingsvg:SvgCachedImage.Transformations>
+                                    <transformations:SelectiveTintTransformation HexColor="#ff000000" EnableSolidColor="true" />
+                                </ffimageloadingsvg:SvgCachedImage.Transformations>
+                            </ffimageloadingsvg:SvgCachedImage>
+                        </ContentView>
+                        <StackLayout VerticalOptions="Center" Grid.Column="1">
+                            <Label Margin="0,5,0,0" FontSize="16" Style="{StaticResource BoldLabel}" Text="{Binding Title}" />
+                            <Label Margin="0,-5,0,5" Text="{Binding Domain}" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="pasteCellTemplate">
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Style="{StaticResource BoldLabel}" Text="{Binding Source}" />
+                            <Label Margin="20,-5,0,5" Text="{Binding Title}" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+            </DataTemplate>
+            <templates:BreachOrPageTemplateSelector x:Key="breachOrPasteTemplateSelector" BreachTemplate="{StaticResource breachCellTemplate}" PasteTemplate="{StaticResource pasteCellTemplate}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid RowSpacing="0" ColumnSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            
             <SearchBar BackgroundColor="{StaticResource NavigationBackgroundColor}" CancelButtonColor="White" Grid.Row="0" Placeholder="Email address or account name" FontSize="13" Text="{Binding Filter}" SearchCommand="{Binding CheckPwnedCommand}" HeightRequest="40" />
-
             <StackLayout IsVisible="{Binding HasSearched}" Padding="20" Grid.Row="1" BackgroundColor="#348f38">
                 <Label HorizontalTextAlignment="Center" FontSize="18" Style="{StaticResource BoldLabel}" Text="Good news — no pwnage found!" TextColor="White" />
                 <Label HorizontalTextAlignment="Center" Text="No breached accounts." TextColor="White" />
             </StackLayout>
-            
             <StackLayout IsVisible="{Binding HasItems}" Padding="20" Grid.Row="1" BackgroundColor="#ba4343">
                 <Label HorizontalTextAlignment="Center" FontSize="18" Style="{StaticResource BoldLabel}" Text="Oh no — pwned!" TextColor="White" />
-                <Label HorizontalTextAlignment="Center" Text="{Binding Breaches.Count, StringFormat='Pwned on {0} breached site(s).'}" TextColor="White" />
-            </StackLayout>         
-
+                <Label HorizontalTextAlignment="Center" Text="{Binding BreachedDescription}" TextColor="White" />
+            </StackLayout>
             <StackLayout IsVisible="{Binding HasItems, Converter={StaticResource InverseBoolConverter}}" Grid.Row="2" Padding="20,0,20,0" VerticalOptions="Center" Margin="0,-40,0,0">
                 <Image Source="icon-pwned-color.png" HorizontalOptions="Center" Margin="0,0,0,10" />
                 <Label Margin="0,0,0,30" HorizontalTextAlignment="Center" Text="Check if you have an account that has been compromised in a data breach. A 'breach' is an incident where a site's data has been illegally accessed by hackers and then released publicly." />
             </StackLayout>
-            
-            <ListView IsVisible="{Binding HasItems}" Grid.Row="2" x:Name="BreachesList" ItemsSource="{Binding Breaches}" HasUnevenRows="true">
+            <ListView IsVisible="{Binding HasItems}" Grid.Row="2" x:Name="BreachesList" ItemsSource="{Binding BreachesAndPastes}" HasUnevenRows="true" IsGroupingEnabled="true" GroupDisplayBinding="{Binding Name}" ItemTemplate="{StaticResource breachOrPasteTemplateSelector}">
                 <ListView.Behaviors>
                     <behaviors:ListViewSelectedItemBehavior Command="{Binding OpenBreachCommand}" />
                 </ListView.Behaviors>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <local:AccessoryViewCell Accessory="disclosure">
-                            <Grid HeightRequest="60">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="60" />
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-
-                                <ContentView Grid.Column="0">
-                                    <ffimageloadingsvg:SvgCachedImage Margin="10" HeightRequest="40" WidthRequest="80"
-                                        DownsampleToViewSize="true" Source="{Binding ., Converter={StaticResource BreachToImageUrlConverter}}">
-                                        <ffimageloadingsvg:SvgCachedImage.Transformations>
-                                            <transformations:SelectiveTintTransformation HexColor="#ff000000" EnableSolidColor="true" />
-                                        </ffimageloadingsvg:SvgCachedImage.Transformations>
-                                    </ffimageloadingsvg:SvgCachedImage>
-                                </ContentView>
-                                
-                                <StackLayout VerticalOptions="Center" Grid.Column="1">
-                                    <Label Margin="0,5,0,0" FontSize="16" Style="{StaticResource BoldLabel}" Text="{Binding Title}" />
-                                    <Label Margin="0,-5,0,5" Text="{Binding Domain}" />
-                                </StackLayout>
-                            </Grid>
-                        </local:AccessoryViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
             </ListView>
         </Grid>
-	</ContentPage.Content>
+    </ContentPage.Content>
 </ContentPage>
