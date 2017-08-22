@@ -5,6 +5,10 @@
             <TableSection Title="Settings">
                 <local:AccessoryViewCell Accessory="disclosure">
                     <Grid HeightRequest="60">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenPushSettingsCommand}" />
+                        </Grid.GestureRecognizers>
+                        
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />

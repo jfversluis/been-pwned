@@ -111,15 +111,6 @@
     <Reference Include="FreshMvvm">
       <HintPath>..\packages\FreshMvvm.2.2.0\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\FreshMvvm.dll</HintPath>
     </Reference>
-    <Reference Include="Lottie">
-      <HintPath>..\packages\Com.Airbnb.Android.Lottie.2.1.2.0\lib\MonoAndroid40\Lottie.dll</HintPath>
-    </Reference>
-    <Reference Include="Lottie.Forms">
-      <HintPath>..\packages\Com.Airbnb.Xamarin.Forms.Lottie.2.3.1\lib\MonoAndroid70\Lottie.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="Lottie.Forms.Droid">
-      <HintPath>..\packages\Com.Airbnb.Xamarin.Forms.Lottie.2.3.1\lib\MonoAndroid70\Lottie.Forms.Droid.dll</HintPath>
-    </Reference>
     <Reference Include="Plugin.Settings.Abstractions">
       <HintPath>..\packages\Xam.Plugins.Settings.3.0.1\lib\MonoAndroid10\Plugin.Settings.Abstractions.dll</HintPath>
     </Reference>
@@ -213,6 +204,15 @@
     </Reference>
     <Reference Include="BeenPwned.Api">
       <HintPath>..\packages\BeenPwned.Api.1.0.17\lib\netstandard1.3\BeenPwned.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Lottie">
+      <HintPath>..\packages\Com.Airbnb.Android.Lottie.2.2.0.0\lib\MonoAndroid40\Lottie.dll</HintPath>
+    </Reference>
+    <Reference Include="Lottie.Forms">
+      <HintPath>..\packages\Com.Airbnb.Xamarin.Forms.Lottie.2.3.2\lib\MonoAndroid70\Lottie.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Lottie.Forms.Droid">
+      <HintPath>..\packages\Com.Airbnb.Xamarin.Forms.Lottie.2.3.2\lib\MonoAndroid70\Lottie.Forms.Droid.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

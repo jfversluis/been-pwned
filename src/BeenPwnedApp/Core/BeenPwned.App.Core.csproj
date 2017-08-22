@@ -74,6 +74,10 @@
     <Compile Include="Pages\BasePage.xaml.cs">
       <DependentUpon>BasePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PushNotificationsPage.xaml.cs">
+      <DependentUpon>PushNotificationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageModels\PushNotificationsPageModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
@@ -101,6 +105,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\BasePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PushNotificationsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
