@@ -17,6 +17,15 @@
                 <ListView.Behaviors>
                     <behaviors:ListViewSelectedItemBehavior Command="{Binding OpenBreachCommand}" />
                 </ListView.Behaviors>
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="40">
+                            <ContentView VerticalOptions="FillAndExpand" BackgroundColor="#2e82a7">
+                                <Label Style="{StaticResource BoldLabel}" Margin="10,0,0,0" Text="{Binding Key}" TextColor="White" VerticalTextAlignment="Center"/>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <local:AccessoryViewCell Accessory="disclosure">
