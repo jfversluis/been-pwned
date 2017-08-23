@@ -12,7 +12,8 @@
             <converters:StringLengthToBoolConverter x:Key="StringLengthToBoolConverter" />
             
             <!-- Our custom colors -->
-            <Color x:Key="MainTextColor">#00171F</Color>
+            <Color x:Key="MainTextColor">#444444</Color>
+            <Color x:Key="SecondaryTextColor">#666666</Color>
             <Color x:Key="PageBackgroundColor">#FFFFFF</Color>
             <Color x:Key="TutorialPageBackgroundColor">#3a9ac4</Color>
             <Color x:Key="NavigationBackgroundColor">#3a9ac4</Color>
@@ -20,8 +21,10 @@
             <Color x:Key="ButtonBackgroundColor">#2e82a7</Color>
             <Color x:Key="SeparatorColor">#2e82a7</Color>
 
-            <Color x:Key="SectionIndexTextColor">#FFFFFF</Color>
-            <Color x:Key="SectionIndexBackgroundColor">#2b7190</Color>
+            <Color x:Key="SectionGroupBackgroundColor">#ececec</Color>
+            <Color x:Key="SectionGroupTextColor">#666666</Color>
+            <Color x:Key="SectionIndexTextColor">#666666</Color>
+            <Color x:Key="SectionIndexBackgroundColor">#FFFFFF</Color>
 
             <!-- Styles for common elements -->
             <Style TargetType="Label">

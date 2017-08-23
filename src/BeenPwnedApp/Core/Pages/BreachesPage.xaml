@@ -20,8 +20,8 @@
                 <ListView.GroupHeaderTemplate>
                     <DataTemplate>
                         <ViewCell Height="40">
-                            <ContentView VerticalOptions="FillAndExpand" BackgroundColor="#2e82a7">
-                                <Label Style="{StaticResource BoldLabel}" Margin="10,0,0,0" Text="{Binding Key}" TextColor="White" VerticalTextAlignment="Center"/>
+                            <ContentView VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource SectionGroupBackgroundColor}">
+                                <Label Style="{StaticResource BoldLabel}" Margin="10,0,0,0" Text="{Binding Key}" TextColor="{StaticResource SectionGroupTextColor}" VerticalTextAlignment="Center"/>
                             </ContentView>
                         </ViewCell>
                     </DataTemplate>
@@ -47,7 +47,7 @@
                                 
                                 <StackLayout VerticalOptions="Center" Grid.Column="1">
                                     <Label Margin="0,5,0,0" FontSize="16" Style="{StaticResource BoldLabel}" Text="{Binding Title}" />
-                                    <Label Margin="0,-5,0,5" Text="{Binding Domain}" />
+                                    <Label Margin="0,-5,0,5" TextColor="{StaticResource SecondaryTextColor}" Text="{Binding Domain}" />
                                 </StackLayout>
                             </Grid>
                         </local:AccessoryViewCell>
