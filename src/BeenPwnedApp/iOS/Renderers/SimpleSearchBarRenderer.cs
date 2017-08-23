@@ -39,29 +39,6 @@ namespace BeenPwned.App.iOS.Renderers
             // Handles the cursor color
             Control.TintColor = UIColor.White;
 
-            // Style the Cancel button which is a hell...
-            //var appearance = UIBarButtonItem.AppearanceWhenContainedIn(typeof(UISearchBar));
-            //var textAttributes = new UITextAttributes() { TextColor = UIColor.White, Font = UIFont.FromName("Ubuntu", 16) };
-
-            //appearance.SetTitleTextAttributes(textAttributes, UIControlState.Normal);
-            //appearance.SetTitleTextAttributes(textAttributes, UIControlState.Focused);
-            //appearance.SetTitleTextAttributes(textAttributes, UIControlState.Disabled);
-            //appearance.SetTitleTextAttributes(textAttributes, UIControlState.Selected);
-            //appearance.SetTitleTextAttributes(textAttributes, UIControlState.Highlighted);
-            //appearance.SetTitleTextAttributes(textAttributes, UIControlState.Application);
-            //appearance.SetTitleTextAttributes(textAttributes, UIControlState.Reserved);
-            //appearance.TintColor = UIColor.White;
-
-            //var buttonAppearance = UIButton.AppearanceWhenContainedIn(typeof(UISearchBar));
-            //buttonAppearance.SetTitleColor(UIColor.White, UIControlState.Normal);
-            //buttonAppearance.SetTitleColor(UIColor.White, UIControlState.Focused);
-            //buttonAppearance.SetTitleColor(UIColor.White, UIControlState.Disabled);
-            //buttonAppearance.SetTitleColor(UIColor.White, UIControlState.Selected);
-            //buttonAppearance.SetTitleColor(UIColor.White, UIControlState.Highlighted);
-            //buttonAppearance.SetTitleColor(UIColor.White, UIControlState.Application);
-            //buttonAppearance.SetTitleColor(UIColor.White, UIControlState.Reserved);
-            //buttonAppearance.TintColor = UIColor.White;
-
             // Handles customizing the search icon.
             var searchImage = UIImage.FromBundle("icon-search.png").ImageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate);
             Control.SetImageforSearchBarIcon(searchImage, UISearchBarIcon.Search, UIControlState.Normal);
