@@ -5,7 +5,7 @@
     x:Class="BeenPwned.App.Core.Views.LoadingView">
 	<ContentView.Content>
         <StackLayout VerticalOptions="Center" Padding="20,0,20,40" Spacing="10">
-            <lottie:AnimationView Animation="snap_loader_black.json" HeightRequest="50" WidthRequest="50"
+            <lottie:AnimationView Animation="animation-loader.json" HeightRequest="50" WidthRequest="50"
                     Loop="True" IsPlaying="{Binding IsLoading}" AutoPlay="true"
                     VerticalOptions="FillAndExpand"
                     HorizontalOptions="FillAndExpand"/>

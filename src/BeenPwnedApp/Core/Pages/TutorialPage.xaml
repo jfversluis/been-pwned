@@ -18,8 +18,9 @@
                     <DataTemplate>
                         <StackLayout Orientation="Vertical" Padding="30">
                             <Image Source="{Binding ImageUrl}" WidthRequest="200" HeightRequest="200" Margin="50" />
-                            <!--<lottie:AnimationView Progress="0" x:Name="AnimationView" Duration="200" Animation="vr_animation.json" 
-                                Loop="True" AutoPlay="True" WidthRequest="300" HeightRequest="300" />-->
+                         <!--   <lottie:AnimationView x:Name="AnimationView" Duration="200" Animation="animation-lock.json" 
+                                Loop="False" AutoPlay="False" WidthRequest="300" HeightRequest="300" />-->
+
                             <Label Margin="0,0,0,5" FontFamily="Ubuntu-Bold" Grid.Row="1" FontAttributes="Bold" Text="{Binding Title}" HorizontalTextAlignment="Center" TextColor="#FFFFFF" FontSize="24" />
                             <Label FontFamily="Ubuntu-Regular" Grid.Row="2" Text="{Binding SubTitle}" HorizontalTextAlignment="Center" TextColor="#FFFFFF" FontSize="16" />
                         </StackLayout>
