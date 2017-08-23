@@ -12,7 +12,7 @@
 	<ContentPage.Content>
         <Grid>
             <ListView x:Name="BreachesList" IsVisible="{Binding IsLoading, Converter={StaticResource InverseBoolConverter}}" ItemsSource="{Binding Breaches}" HasUnevenRows="true" IsPullToRefreshEnabled="true"
-                RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsLoading}" SeparatorColor="{StaticResource ListSeparatorColor}" GroupDisplayBinding="{Binding Key}"
+                RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}" SeparatorColor="{StaticResource ListSeparatorColor}" GroupDisplayBinding="{Binding Key}"
                 GroupShortNameBinding="{Binding Key}" IsGroupingEnabled="true">
                 <ListView.Behaviors>
                     <behaviors:ListViewSelectedItemBehavior Command="{Binding OpenBreachCommand}" />

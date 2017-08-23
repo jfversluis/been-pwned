@@ -12,6 +12,8 @@ namespace BeenPwned.App.Core.PageModels
 {
     public class BreachesPageModel : BasePageModel
     {
+        public bool IsRefreshing { get; set; }
+
         private readonly ObservableRangeCollection<Grouping<string, Breach>> _breaches = new ObservableRangeCollection<Grouping<string, Breach>>();
         public ObservableCollection<Grouping<string, Breach>> Breaches => _breaches;
 
@@ -19,12 +21,13 @@ namespace BeenPwned.App.Core.PageModels
         public ICommand OpenBreachCommand => _openBreachCommand ?? (_openBreachCommand = new Command(async (item) => await OpenBreach(item), (arg) => !_isNavigating));
 
         private ICommand _refreshCommand;
-        public ICommand RefreshCommand => _refreshCommand ?? (_refreshCommand = new Command(ExecuteRefreshCommand));
+        public ICommand RefreshCommand => _refreshCommand ?? (_refreshCommand = new Command(() => ExecuteRefreshCommand(true)));
 
         protected override void ViewIsAppearing(object sender, EventArgs e)
         {
+            IsLoading = true;
             base.ViewIsAppearing(sender, e);
-            ExecuteRefreshCommand();
+            ExecuteRefreshCommand(false);
         }
 
         public async Task OpenBreach(object breach)
@@ -36,9 +39,9 @@ namespace BeenPwned.App.Core.PageModels
             _isNavigating = false;
         }
 
-        private void ExecuteRefreshCommand()
+        private void ExecuteRefreshCommand(bool isRefreshing = true)
         {
-            IsLoading = true;
+            IsRefreshing = isRefreshing;
 
             BeenPwnedService.Instance.GetAllBreaches()
                             .Subscribe((breaches) =>
@@ -52,6 +55,7 @@ namespace BeenPwned.App.Core.PageModels
                     _breaches.ReplaceRange(sorted);
 
                     IsLoading = false;
+                    IsRefreshing = false;
                 });
         }
     }
