@@ -14,7 +14,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <StackLayout VerticalOptions="Center" Grid.Column="0">
-                            <Label Margin="20,5,0,0" FontSize="16" Text="Push notifications" />
+                            <Label Margin="20,0,20,0" VerticalTextAlignment="Center" Text="Push notifications" />
                         </StackLayout>
                     </Grid>
                 </local:AccessoryViewCell>
@@ -31,7 +31,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <StackLayout VerticalOptions="Center" Grid.Column="0">
-                            <Label Margin="20,5,0,0" FontSize="16" Text="FAQ" />
+                            <Label Margin="20,0,20,0" VerticalTextAlignment="Center"  Text="FAQ" />
                         </StackLayout>
                     </Grid>
                 </local:AccessoryViewCell>
@@ -46,7 +46,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <StackLayout VerticalOptions="Center" Grid.Column="0">
-                            <Label Margin="20,5,0,0" FontSize="16" Text="Open-source on GitHub" />
+                            <Label Margin="20,0,20,0" VerticalTextAlignment="Center"  Text="Open-source on GitHub" />
                         </StackLayout>
                     </Grid>
                 </local:AccessoryViewCell>
@@ -61,7 +61,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <StackLayout VerticalOptions="Center" Grid.Column="0">
-                            <Label Margin="20,5,0,0" FontSize="16" Text="Disclaimer" />
+                            <Label Margin="20,0,20,0" VerticalTextAlignment="Center" Text="Disclaimer" />
                         </StackLayout>
                     </Grid>
                 </local:AccessoryViewCell>
@@ -78,7 +78,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <StackLayout VerticalOptions="Center" Grid.Column="0">
-                            <Label Margin="20,5,0,0" FontSize="16" Text="Acr.UserDialogs" />
+                            <Label Margin="20,0,20,0" VerticalTextAlignment="Center"  Text="Acr.UserDialogs" />
                         </StackLayout>
                     </Grid>
                 </local:AccessoryViewCell>
@@ -93,7 +93,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <StackLayout VerticalOptions="Center" Grid.Column="0">
-                            <Label Margin="20,5,0,0" FontSize="16" Text="Akavache" />
+                            <Label Margin="20,0,20,0" VerticalTextAlignment="Center"  Text="Akavache" />
                         </StackLayout>
                     </Grid>
                 </local:AccessoryViewCell>
@@ -108,7 +108,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <StackLayout VerticalOptions="Center" Grid.Column="0">
-                            <Label Margin="20,5,0,0" FontSize="16" Text="BeenPwned.Api" />
+                            <Label Margin="20,0,20,0" VerticalTextAlignment="Center"  Text="BeenPwned.Api" />
                         </StackLayout>
                     </Grid>
                 </local:AccessoryViewCell>
@@ -123,7 +123,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <StackLayout VerticalOptions="Center" Grid.Column="0">
-                            <Label Margin="20,5,0,0" FontSize="16" Text="CarouselView" />
+                            <Label Margin="20,0,20,0" VerticalTextAlignment="Center" Text="CarouselView" />
                         </StackLayout>
                     </Grid>
                 </local:AccessoryViewCell>
@@ -138,7 +138,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <StackLayout VerticalOptions="Center" Grid.Column="0">
-                            <Label Margin="20,5,0,0" FontSize="16" Text="FFImageLoading" />
+                            <Label Margin="20,0,20,0" VerticalTextAlignment="Center" Text="FFImageLoading" />
                         </StackLayout>
                     </Grid>
                 </local:AccessoryViewCell>
@@ -153,7 +153,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <StackLayout VerticalOptions="Center" Grid.Column="0">
-                            <Label Margin="20,5,0,0" FontSize="16" Text="FreshMvvm" />
+                            <Label Margin="20,0,20,0" VerticalTextAlignment="Center" Text="FreshMvvm" />
                         </StackLayout>
                     </Grid>
                 </local:AccessoryViewCell>
@@ -168,7 +168,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <StackLayout VerticalOptions="Center" Grid.Column="0">
-                            <Label Margin="20,5,0,0" FontSize="16" Text="LottieXamarin" />
+                            <Label Margin="20,0,20,0" VerticalTextAlignment="Center" Text="LottieXamarin" />
                         </StackLayout>
                     </Grid>
                 </local:AccessoryViewCell>
@@ -183,7 +183,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <StackLayout VerticalOptions="Center" Grid.Column="0">
-                            <Label Margin="20,5,0,0" FontSize="16" Text="MvvmHelpers" />
+                            <Label Margin="20,0,20,0" VerticalTextAlignment="Center" Text="MvvmHelpers" />
                         </StackLayout>
                     </Grid>
                 </local:AccessoryViewCell>
@@ -198,7 +198,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <StackLayout VerticalOptions="Center" Grid.Column="0">
-                            <Label Margin="20,5,0,0" FontSize="16" Text="Json.Net" />
+                            <Label Margin="20,0,20,0" VerticalTextAlignment="Center" Text="Json.Net" />
                         </StackLayout>
                     </Grid>
                 </local:AccessoryViewCell>
@@ -213,7 +213,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <StackLayout VerticalOptions="Center" Grid.Column="0">
-                            <Label Margin="20,5,0,0" FontSize="16" Text="PropertyChanged.Fody" />
+                            <Label Margin="20,0,20,0" VerticalTextAlignment="Center" Text="PropertyChanged.Fody" />
                         </StackLayout>
                     </Grid>
                 </local:AccessoryViewCell>
@@ -228,7 +228,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <StackLayout VerticalOptions="Center" Grid.Column="0">
-                            <Label Margin="20,5,0,0" FontSize="16" Text="Settings Plugin" />
+                            <Label Margin="20,0,20,0" VerticalTextAlignment="Center" Text="Settings Plugin" />
                         </StackLayout>
                     </Grid>
                 </local:AccessoryViewCell>
