@@ -29,7 +29,7 @@ namespace BeenPwned.App.iOS.Renderers
 
             if (Control == null)
                 return;
-
+            
             var searchBar = e.NewElement;
 
             Control.AutocapitalizationType = UITextAutocapitalizationType.None;
@@ -45,6 +45,8 @@ namespace BeenPwned.App.iOS.Renderers
 
             // Handles customizing the clear icon.
             var searchTextField = Control.ValueForKey(new NSString("_searchField")) as UITextField;
+            var placeholderLabel = searchTextField.ValueForKey(new NSString("placeholderLabel")) as UILabel;
+            placeholderLabel.TextColor = UIColor.White;
             var clearButton = searchTextField.ValueForKey(new NSString("_clearButton")) as UIButton;
             var newClearImage = clearButton.ImageView?.Image?.ImageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate);
             Control.SetImageforSearchBarIcon(newClearImage, UISearchBarIcon.Clear, UIControlState.Normal);
@@ -55,6 +57,7 @@ namespace BeenPwned.App.iOS.Renderers
 
             // Styles the placeholder text
             UILabel.AppearanceWhenContainedIn(typeof(UISearchBar)).TextColor = UIColor.White;
+
         }
     }
 }
