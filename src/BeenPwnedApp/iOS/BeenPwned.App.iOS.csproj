@@ -281,9 +281,10 @@
     <BundleResource Include="Resources\icon-password-color.png" />
     <BundleResource Include="Resources\Fonts\Password-Dots.ttf" />
     <BundleResource Include="Resources\Fonts\fontawesome.ttf" />
-    <BundleResource Include="Resources\icon_settings%403x.png" />
-    <BundleResource Include="Resources\icon_settings%402x.png" />
     <BundleResource Include="Resources\Notification_Red.json" />
+    <BundleResource Include="Resources\snap_loader_black.json" />
+    <BundleResource Include="Resources\icon-settings%402x.png" />
+    <BundleResource Include="Resources\icon-settings%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />

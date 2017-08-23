@@ -7,10 +7,11 @@
     xmlns:transformations="clr-namespace:BeenPwned.App.Transformations;assembly=BeenPwned.App.Transformations"
     xmlns:behaviors="clr-namespace:BeenPwned.App.Core.Behaviors;assembly=BeenPwned.App.Core"
     xmlns:pages="clr-namespace:BeenPwned.App.Core.Pages;assembly=BeenPwned.App.Core"
+    xmlns:views="clr-namespace:BeenPwned.App.Core.Views;assembly=BeenPwned.App.Core"
     x:Class="BeenPwned.App.Core.Pages.BreachesPage">
 	<ContentPage.Content>
         <Grid>
-            <ListView x:Name="BreachesList" ItemsSource="{Binding Breaches}" HasUnevenRows="true" IsPullToRefreshEnabled="true"
+            <ListView x:Name="BreachesList" IsVisible="{Binding IsLoading, Converter={StaticResource InverseBoolConverter}}" ItemsSource="{Binding Breaches}" HasUnevenRows="true" IsPullToRefreshEnabled="true"
                 RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsLoading}" GroupDisplayBinding="{Binding Key}"
                 GroupShortNameBinding="{Binding Key}" IsGroupingEnabled="true">
                 <ListView.Behaviors>
@@ -44,6 +45,8 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+            <views:LoadingView IsVisible="{Binding IsLoading}"/>
         </Grid>
 	</ContentPage.Content>
 </pages:BasePage>
