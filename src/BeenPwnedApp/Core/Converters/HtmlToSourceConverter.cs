@@ -13,7 +13,7 @@ namespace BeenPwned.App.Core.Converters
                 var htmlSource = new HtmlWebViewSource();
                 htmlSource.Html = "<style type=\"text/css\">" +
                     "@font-face { font-family: Ubuntu; src: url('Fonts/Ubuntu-Regular.ttf') }" +
-                    "body { font-family: Ubuntu; font-size: 14px; }" +
+                    "body { font-family: Ubuntu; font-size: 14px; color: #666666 } a, a:visited, a:active{ color: #3a9ac4;}" +
                 "</style>" + value;
                 return htmlSource;
             }
