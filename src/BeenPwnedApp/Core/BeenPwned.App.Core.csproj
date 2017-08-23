@@ -83,7 +83,7 @@
     <Compile Include="Pages\PastePage.xaml.cs">
       <DependentUpon>PastePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataTemplateSelectors\BreachOrPageTemplateSelector.cs" />
+    <Compile Include="DataTemplateSelectors\BreachOrPasteTemplateSelector.cs" />
     <Compile Include="Interfaces\IBrowserService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +115,8 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\PushNotificationsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\PastePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
