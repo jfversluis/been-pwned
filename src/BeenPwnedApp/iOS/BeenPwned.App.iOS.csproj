@@ -244,6 +244,7 @@
     <Compile Include="Renderers\BorderlessEntryRenderer.cs" />
     <Compile Include="Services\BrowserService.cs" />
     <Compile Include="Renderers\ColoredListViewIndexRenderer.cs" />
+    <Compile Include="Renderers\SimpleSearchBarRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\BeenPwned.App.Core.csproj">
@@ -286,6 +287,9 @@
     <BundleResource Include="Resources\icon-settings%403x.png" />
     <BundleResource Include="Resources\animation-loader.json" />
     <BundleResource Include="Resources\animation-lock.json" />
+    <BundleResource Include="Resources\icon-cancel%403x.png" />
+    <BundleResource Include="Resources\icon-search%403x.png" />
+    <BundleResource Include="Resources\icon-clear%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />

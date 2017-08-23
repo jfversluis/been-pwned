@@ -58,19 +58,25 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <SearchBar BackgroundColor="{StaticResource NavigationBackgroundColor}" CancelButtonColor="White" Grid.Row="0" Placeholder="Email address or account name" FontSize="13" Text="{Binding Filter}" SearchCommand="{Binding CheckPwnedCommand}" HeightRequest="40" />
+            
+            <SearchBar BackgroundColor="{StaticResource NavigationBackgroundColor}" CancelButtonColor="White" Grid.Row="0" TextColor="White" PlaceholderColor="White" 
+            Placeholder="Email address or account name" FontSize="13" Text="{Binding Filter}" SearchCommand="{Binding CheckPwnedCommand}" HeightRequest="40" />
+            
             <StackLayout IsVisible="{Binding HasSearched}" Padding="20" Grid.Row="1" BackgroundColor="#348f38">
                 <Label HorizontalTextAlignment="Center" FontSize="18" Style="{StaticResource BoldLabel}" Text="Good news — no pwnage found!" TextColor="White" />
                 <Label HorizontalTextAlignment="Center" Text="No breached accounts." TextColor="White" />
             </StackLayout>
+            
             <StackLayout IsVisible="{Binding HasItems}" Padding="20" Grid.Row="1" BackgroundColor="#ba4343">
                 <Label HorizontalTextAlignment="Center" FontSize="18" Style="{StaticResource BoldLabel}" Text="Oh no — pwned!" TextColor="White" />
                 <Label HorizontalTextAlignment="Center" Text="{Binding BreachedDescription}" TextColor="White" />
             </StackLayout>
+            
             <StackLayout IsVisible="{Binding HasItems, Converter={StaticResource InverseBoolConverter}}" Grid.Row="2" Padding="20,0,20,0" VerticalOptions="Center" Margin="0,-40,0,0">
                 <Image Source="icon-pwned-color.png" HorizontalOptions="Center" Margin="0,0,0,10" />
                 <Label Margin="0,0,0,30" HorizontalTextAlignment="Center" Text="Check if you have an account that has been compromised in a data breach. A 'breach' is an incident where a site's data has been illegally accessed by hackers and then released publicly." />
             </StackLayout>
+                
             <ListView IsVisible="{Binding HasItems}" Grid.Row="2" x:Name="BreachesList" ItemsSource="{Binding BreachesAndPastes}" HasUnevenRows="true" IsGroupingEnabled="true" 
                 GroupDisplayBinding="{Binding Name}" ItemTemplate="{StaticResource breachOrPasteTemplateSelector}" SeparatorColor="{StaticResource ListSeparatorColor}" >
                 <ListView.Behaviors>
