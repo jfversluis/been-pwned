@@ -28,9 +28,11 @@ namespace BeenPwned.App.iOS
 
             UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
 
+#if !DEBUG
             // Periodically let the app ask for a review
-			if (UIDevice.CurrentDevice.CheckSystemVersion(10, 3))
-				SKStoreReviewController.RequestReview();
+            if (UIDevice.CurrentDevice.CheckSystemVersion(10, 3))
+                SKStoreReviewController.RequestReview();
+#endif
 
             return base.FinishedLaunching(uiApplication, launchOptions);
         }
