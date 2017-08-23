@@ -235,7 +235,6 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Extensions\ImageExtensions.cs" />
     <Compile Include="Renderers\AccessoryViewCellRenderer.cs" />
-    <Compile Include="Renderers\AnimationNavigationRenderer.cs" />
     <Compile Include="Renderers\NormalPageRenderer.cs" />
     <Compile Include="Renderers\TableViewHeaderRenderer.cs" />
     <Compile Include="Renderers\TutorialPageRenderer.cs" />
@@ -244,6 +243,7 @@
     <Compile Include="Renderers\ExtendedWebViewRenderer.cs" />
     <Compile Include="Renderers\BorderlessEntryRenderer.cs" />
     <Compile Include="Services\BrowserService.cs" />
+    <Compile Include="Renderers\ColoredListViewIndexRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\BeenPwned.App.Core.csproj">

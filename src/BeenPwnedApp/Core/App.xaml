@@ -20,6 +20,9 @@
             <Color x:Key="ButtonBackgroundColor">#2e82a7</Color>
             <Color x:Key="SeparatorColor">#2e82a7</Color>
 
+            <Color x:Key="SectionIndexTextColor">#FFFFFF</Color>
+            <Color x:Key="SectionIndexBackgroundColor">#2b7190</Color>
+
             <!-- Styles for common elements -->
             <Style TargetType="Label">
                 <Setter Property="FontFamily">
