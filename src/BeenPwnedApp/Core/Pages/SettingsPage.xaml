@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Settings &amp; About" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:BeenPwned.App.Core.Controls;assembly=BeenPwned.App.Core" x:Class="BeenPwned.App.Core.Pages.SettingsPage">
+    <TableView Intent="Settings">
+        <TableView.Root>
+            <TableSection Title="Settings">
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenPushSettingsCommand}" />
+                        </Grid.GestureRecognizers>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="Push notifications" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+            </TableSection>
+            <TableSection Title="About">
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://haveibeenpwned.com/FAQs" />
+                        </Grid.GestureRecognizers>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="FAQ" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/jfversluis/been-pwned" />
+                        </Grid.GestureRecognizers>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="Open-source on GitHub" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/jfversluis/been-pwned/supporting-files/disclaimer" />
+                        </Grid.GestureRecognizers>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="Disclaimer" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+            </TableSection>
+            <TableSection Title="Used open-source libraries">
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/aritchie/userdialogs" />
+                        </Grid.GestureRecognizers>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="Acr.UserDialogs" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/akavache/Akavache" />
+                        </Grid.GestureRecognizers>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="Akavache" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/jfverlsuis/BeenPwned.Api" />
+                        </Grid.GestureRecognizers>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="BeenPwned.Api" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/alexrainman/CarouselView" />
+                        </Grid.GestureRecognizers>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="CarouselView" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/luberda-molinet/FFImageLoading" />
+                        </Grid.GestureRecognizers>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="FFImageLoading" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/rid00z/FreshMvvm" />
+                        </Grid.GestureRecognizers>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="FreshMvvm" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/martijn00/LottieXamarin" />
+                        </Grid.GestureRecognizers>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="LottieXamarin" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/jamesmontemagno/mvvm-helpers" />
+                        </Grid.GestureRecognizers>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="MvvmHelpers" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/JamesNK/Newtonsoft.Json" />
+                        </Grid.GestureRecognizers>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="Json.Net" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/Fody/PropertyChanged" />
+                        </Grid.GestureRecognizers>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="PropertyChanged.Fody" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/jamesmontemagno/SettingsPlugin" />
+                        </Grid.GestureRecognizers>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,5,0,0" FontSize="16" Text="Settings Plugin" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+            </TableSection>
+        </TableView.Root>
+    </TableView>
+</ContentPage>

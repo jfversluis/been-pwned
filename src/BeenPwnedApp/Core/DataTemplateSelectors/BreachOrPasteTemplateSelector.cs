@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace BeenPwned.App.Core.DataTemplateSelectors
 {
-    public class BreachOrPageTemplateSelector : DataTemplateSelector
+    public class BreachOrPasteTemplateSelector : DataTemplateSelector
     {
         public DataTemplate BreachTemplate { get; set; }
         public DataTemplate PasteTemplate { get; set; }

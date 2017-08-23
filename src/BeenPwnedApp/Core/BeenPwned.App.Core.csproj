@@ -67,12 +67,23 @@
     <Compile Include="Controls\BorderlessEntry.cs" />
     <Compile Include="Converters\InverseBoolConverter.cs" />
     <Compile Include="Converters\StringLengthToBoolConverter.cs" />
+    <Compile Include="PageModels\SettingsPageModel.cs" />
+    <Compile Include="Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BasePage.xaml.cs">
+      <DependentUpon>BasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PushNotificationsPage.xaml.cs">
+      <DependentUpon>PushNotificationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageModels\PushNotificationsPageModel.cs" />
     <Compile Include="Models\SearchListGroup.cs" />
     <Compile Include="PageModels\PastePageModel.cs" />
     <Compile Include="Pages\PastePage.xaml.cs">
       <DependentUpon>PastePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataTemplateSelectors\BreachOrPageTemplateSelector.cs" />
+    <Compile Include="DataTemplateSelectors\BreachOrPasteTemplateSelector.cs" />
     <Compile Include="Interfaces\IBrowserService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +106,15 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MaterialEntry.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\SettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\BasePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\PushNotificationsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\PastePage.xaml">
