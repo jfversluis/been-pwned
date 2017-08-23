@@ -20,6 +20,7 @@
             <Color x:Key="TutorialNavigationBackgroundColor">#3a9ac4</Color>
             <Color x:Key="ButtonBackgroundColor">#2e82a7</Color>
             <Color x:Key="SeparatorColor">#2e82a7</Color>
+            <Color x:Key="ListSeparatorColor">#ececec</Color>
 
             <Color x:Key="SectionGroupBackgroundColor">#ececec</Color>
             <Color x:Key="SectionGroupTextColor">#666666</Color>

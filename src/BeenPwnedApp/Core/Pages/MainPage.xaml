@@ -71,10 +71,20 @@
                 <Image Source="icon-pwned-color.png" HorizontalOptions="Center" Margin="0,0,0,10" />
                 <Label Margin="0,0,0,30" HorizontalTextAlignment="Center" Text="Check if you have an account that has been compromised in a data breach. A 'breach' is an incident where a site's data has been illegally accessed by hackers and then released publicly." />
             </StackLayout>
-            <ListView IsVisible="{Binding HasItems}" Grid.Row="2" x:Name="BreachesList" ItemsSource="{Binding BreachesAndPastes}" HasUnevenRows="true" IsGroupingEnabled="true" GroupDisplayBinding="{Binding Name}" ItemTemplate="{StaticResource breachOrPasteTemplateSelector}">
+            <ListView IsVisible="{Binding HasItems}" Grid.Row="2" x:Name="BreachesList" ItemsSource="{Binding BreachesAndPastes}" HasUnevenRows="true" IsGroupingEnabled="true" 
+                GroupDisplayBinding="{Binding Name}" ItemTemplate="{StaticResource breachOrPasteTemplateSelector}" SeparatorColor="{StaticResource ListSeparatorColor}" >
                 <ListView.Behaviors>
                     <behaviors:ListViewSelectedItemBehavior Command="{Binding OpenBreachCommand}" />
                 </ListView.Behaviors>
+                 <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="40">
+                            <ContentView VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource SectionGroupBackgroundColor}">
+                                <Label Style="{StaticResource BoldLabel}" Margin="10,0,0,0" Text="{Binding Name}" TextColor="{StaticResource SectionGroupTextColor}" VerticalTextAlignment="Center"/>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
             </ListView>
 
 
