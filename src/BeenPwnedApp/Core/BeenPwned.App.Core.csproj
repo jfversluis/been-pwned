@@ -78,6 +78,13 @@
       <DependentUpon>PushNotificationsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageModels\PushNotificationsPageModel.cs" />
+    <Compile Include="Models\SearchListGroup.cs" />
+    <Compile Include="PageModels\PastePageModel.cs" />
+    <Compile Include="Pages\PastePage.xaml.cs">
+      <DependentUpon>PastePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataTemplateSelectors\BreachOrPageTemplateSelector.cs" />
+    <Compile Include="Interfaces\IBrowserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
@@ -108,6 +115,7 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\PushNotificationsPage.xaml">
+    <EmbeddedResource Include="Pages\PastePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -118,6 +126,8 @@
     <Folder Include="Helpers\" />
     <Folder Include="Services\" />
     <Folder Include="Converters\" />
+    <Folder Include="DataTemplateSelectors\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BeenPwned.App.Transformations.iOS\BeenPwned.App.Transformations\BeenPwned.App.Transformations.csproj">

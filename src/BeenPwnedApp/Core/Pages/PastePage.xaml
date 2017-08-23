@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="{Binding Paste.Title}" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BeenPwned.App.Core.Pages.PastePage">
+	<TableView Intent="Form">
+    <TableRoot>
+      <TableSection>
+        <EntryCell IsEnabled="False" Label="Source" Text="{Binding Paste.Source}" />
+        <EntryCell IsEnabled="False" Label="E-mails" Text="{Binding Paste.NoOfEmails, StringFormat='{0:N0}'}" />
+        <EntryCell IsEnabled="False" Label="Post date" Text="{Binding Paste.Date, StringFormat='{0:d}'}" />
+      </TableSection>
+      <TableSection>
+        <ViewCell>
+          <Button Text="Visit source page (browser)" Command="{Binding OpenPasteUrlCommand}" />
+        </ViewCell>
+      </TableSection>
+    </TableRoot>
+  </TableView>
+</ContentPage>

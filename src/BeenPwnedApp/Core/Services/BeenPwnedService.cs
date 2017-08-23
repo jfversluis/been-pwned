@@ -35,5 +35,10 @@ namespace BeenPwned.App.Core.Services
         {
             return await _pwnedClient.GetPwnedPassword(password);
         }
+
+		internal async Task<IEnumerable<Paste>> GetPastesForAccount(string account)
+		{
+			return await _pwnedClient.GetPastesForAccount(account);
+		}
     }
 }
