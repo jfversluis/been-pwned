@@ -43,15 +43,16 @@ namespace BeenPwned.App.Core.PageModels
             BeenPwnedService.Instance.GetAllBreaches()
                             .Subscribe((breaches) =>
                 {
+
                     var sorted = from breach in breaches
                                  orderby breach.Name
                                  group breach by breach.Name[0].ToString().ToUpperInvariant() into breachGroup
                                  select new Grouping<string, Breach>(breachGroup.Key, breachGroup);
-                
-                    _breaches.ReplaceRange(sorted);
-                });
 
-            IsLoading = false;
+                    _breaches.ReplaceRange(sorted);
+
+                    IsLoading = false;
+                });
         }
     }
 }
