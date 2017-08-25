@@ -1,4 +1,5 @@
-﻿using CarouselView.FormsPlugin.iOS;
+﻿using System;
+using CarouselView.FormsPlugin.iOS;
 using FFImageLoading.Forms.Touch;
 using Foundation;
 using Lottie.Forms.iOS.Renderers;
@@ -52,15 +53,17 @@ namespace BeenPwned.App.iOS
 				if (error != null)
 				{
 					// Error unregistering
+                    Console.WriteLine($"Error: {error.Description}");
 					return;
 				}
 
 				// Register this device with the notification hub
-				_hub.RegisterNativeAsync(deviceToken, null, (registerError) =>
+                _hub.RegisterNativeAsync(deviceToken, null, (registerError) =>
 				{
 					if (registerError != null)
 					{
-						// Error registering
+                        // Error registering
+                        Console.WriteLine($"Error: {error.Description}");
 					}
 				});
 			});

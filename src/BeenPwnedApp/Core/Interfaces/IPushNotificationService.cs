@@ -2,6 +2,8 @@
 {
     public interface IPushNotificationService
     {
+        bool IsRegistered { get; }
         void RegisterForPushNotifications();
+        void OpenSettings();
     }
 }

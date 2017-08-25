@@ -20,7 +20,7 @@ namespace BeenPwned.App
 
             Instance = this;
 
-            if (!Settings.SkippedTutorial)
+            if (!Settings.Current.SkippedTutorial)
             {
                 var page = FreshPageModelResolver.ResolvePageModel<TutorialPageModel>();
 
