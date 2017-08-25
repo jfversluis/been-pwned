@@ -86,6 +86,9 @@
     <Compile Include="DataTemplateSelectors\BreachOrPasteTemplateSelector.cs" />
     <Compile Include="Interfaces\IBrowserService.cs" />
     <Compile Include="Interfaces\IPushNotificationService.cs" />
+    <Compile Include="Views\LoadingView.xaml.cs">
+      <DependentUpon>LoadingView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
@@ -121,6 +124,9 @@
     <EmbeddedResource Include="Pages\PastePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoadingView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />
@@ -131,6 +137,7 @@
     <Folder Include="Converters\" />
     <Folder Include="DataTemplateSelectors\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BeenPwned.App.Transformations.iOS\BeenPwned.App.Transformations\BeenPwned.App.Transformations.csproj">

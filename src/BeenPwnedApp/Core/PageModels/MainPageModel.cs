@@ -46,21 +46,21 @@ namespace BeenPwned.App.Core.PageModels
 
         public MainPageModel()
         {
-			BreachesAndPastes.Add(new SearchListGroup("Breaches"));
-			BreachesAndPastes.Add(new SearchListGroup("Pastes"));
+            BreachesAndPastes.Add(new SearchListGroup("Breaches"));
+            BreachesAndPastes.Add(new SearchListGroup("Pastes"));
         }
 
         public async Task OpenBreach(object breachOrPaste)
-		{
-			_isNavigating = true;
+        {
+            _isNavigating = true;
 
             if (breachOrPaste is Breach)
-			    await CoreMethods.PushPageModel<BreachPageModel>(breachOrPaste, false, true);
+                await CoreMethods.PushPageModel<BreachPageModel>(breachOrPaste, false, true);
             else if (breachOrPaste is Paste)
-				await CoreMethods.PushPageModel<PastePageModel>(breachOrPaste, false, true);
+                await CoreMethods.PushPageModel<PastePageModel>(breachOrPaste, false, true);
 
-			_isNavigating = false;
-		}
+            _isNavigating = false;
+        }
 
         private async Task CheckPwned()
         {
@@ -72,9 +72,9 @@ namespace BeenPwned.App.Core.PageModels
 
             var breachesGroup = BreachesAndPastes.SingleOrDefault(b => b.Name == "Breaches");
 
-			if (breachesGroup == null)
-				BreachesAndPastes.Add(new SearchListGroup("Breaches"));
-            
+            if (breachesGroup == null)
+                BreachesAndPastes.Add(new SearchListGroup("Breaches"));
+
             BreachesAndPastes.Single(b => b.Name == "Breaches").ReplaceRange(resultBreaches);
 
             IEnumerable<Paste> resultPastes = null;
@@ -85,10 +85,17 @@ namespace BeenPwned.App.Core.PageModels
 
                 var pastesGroup = BreachesAndPastes.SingleOrDefault(b => b.Name == "Pastes");
 
-                if (pastesGroup == null)
-                    BreachesAndPastes.Add(new SearchListGroup("Pastes"));
+                if (resultPastes.Count() > 0)
+                {
+                    if (pastesGroup == null)
+                        BreachesAndPastes.Add(new SearchListGroup("Pastes"));
 
-                BreachesAndPastes.Single(b => b.Name == "Pastes").ReplaceRange(resultPastes);
+                    BreachesAndPastes.Single(b => b.Name == "Pastes").ReplaceRange(resultPastes);
+                }
+                else
+                {
+                    BreachesAndPastes.Remove(pastesGroup);
+                }
             }
             catch (ArgumentException)
             {
@@ -98,8 +105,8 @@ namespace BeenPwned.App.Core.PageModels
             }
 
             HasItems = BreachesAndPastes.SelectMany(g => g).Any();
-			var breachCount = resultBreaches?.Count() ?? 0;
-			var pasteCount = resultPastes?.Count() ?? 0;
+            var breachCount = resultBreaches?.Count() ?? 0;
+            var pasteCount = resultPastes?.Count() ?? 0;
 
             BreachedDescription = $"Pwned on {breachCount} breached site(s) and found {pasteCount} paste(s).";
 

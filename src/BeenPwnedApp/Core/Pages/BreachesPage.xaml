@@ -7,15 +7,25 @@
     xmlns:transformations="clr-namespace:BeenPwned.App.Transformations;assembly=BeenPwned.App.Transformations"
     xmlns:behaviors="clr-namespace:BeenPwned.App.Core.Behaviors;assembly=BeenPwned.App.Core"
     xmlns:pages="clr-namespace:BeenPwned.App.Core.Pages;assembly=BeenPwned.App.Core"
+    xmlns:views="clr-namespace:BeenPwned.App.Core.Views;assembly=BeenPwned.App.Core"
     x:Class="BeenPwned.App.Core.Pages.BreachesPage">
 	<ContentPage.Content>
         <Grid>
-            <ListView x:Name="BreachesList" ItemsSource="{Binding Breaches}" HasUnevenRows="true" IsPullToRefreshEnabled="true"
-                RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsLoading}" GroupDisplayBinding="{Binding Key}"
+            <ListView x:Name="BreachesList" IsVisible="{Binding IsLoading, Converter={StaticResource InverseBoolConverter}}" ItemsSource="{Binding Breaches}" HasUnevenRows="true" IsPullToRefreshEnabled="true"
+                RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}" SeparatorColor="{StaticResource ListSeparatorColor}" GroupDisplayBinding="{Binding Key}"
                 GroupShortNameBinding="{Binding Key}" IsGroupingEnabled="true">
                 <ListView.Behaviors>
                     <behaviors:ListViewSelectedItemBehavior Command="{Binding OpenBreachCommand}" />
                 </ListView.Behaviors>
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="40">
+                            <ContentView VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource SectionGroupBackgroundColor}">
+                                <Label Style="{StaticResource BoldLabel}" Margin="10,0,0,0" Text="{Binding Key}" TextColor="{StaticResource SectionGroupTextColor}" VerticalTextAlignment="Center"/>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <local:AccessoryViewCell Accessory="disclosure">
@@ -37,13 +47,15 @@
                                 
                                 <StackLayout VerticalOptions="Center" Grid.Column="1">
                                     <Label Margin="0,5,0,0" FontSize="16" Style="{StaticResource BoldLabel}" Text="{Binding Title}" />
-                                    <Label Margin="0,-5,0,5" Text="{Binding Domain}" />
+                                    <Label Margin="0,-5,0,5" TextColor="{StaticResource SecondaryTextColor}" Text="{Binding Domain}" />
                                 </StackLayout>
                             </Grid>
                         </local:AccessoryViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+            <views:LoadingView IsVisible="{Binding IsLoading}"/>
         </Grid>
 	</ContentPage.Content>
 </pages:BasePage>
