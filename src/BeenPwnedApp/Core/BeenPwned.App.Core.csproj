@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="DataTemplateSelectors\BreachOrPasteTemplateSelector.cs" />
     <Compile Include="Interfaces\IBrowserService.cs" />
+    <Compile Include="Interfaces\IPushNotificationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
