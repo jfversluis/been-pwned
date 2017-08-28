@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="DataTemplateSelectors\BreachOrPasteTemplateSelector.cs" />
     <Compile Include="Interfaces\IBrowserService.cs" />
+    <Compile Include="Interfaces\IPushNotificationService.cs" />
     <Compile Include="Views\LoadingView.xaml.cs">
       <DependentUpon>LoadingView.xaml</DependentUpon>
     </Compile>

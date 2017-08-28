@@ -15,7 +15,6 @@ namespace BeenPwned.App.Core.PageModels
         public TutorialPageModel()
         {
             // TODO: Replace the images with Lottie animations
-            // Won't work for now due to a bug in Lottie: https://github.com/martijn00/LottieXamarin/issues/91
             Items = new List<TutorialItem>() {
                 new TutorialItem(){
                     Title="Welcome to HIBP",
@@ -40,11 +39,11 @@ namespace BeenPwned.App.Core.PageModels
             };
         }
 
-        void SkipTutorial()
+        private void SkipTutorial()
         {
             // User wants to skip the tutorial, so we save that to our settings.
             // Next time he won't be shown the tutorial anymore.
-            Settings.SkippedTutorial = true;
+            Settings.Current.SkippedTutorial = true;
 
             BeenPwnedApp.Instance.SwitchToMainPage();
         }
