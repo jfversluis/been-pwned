@@ -10,6 +10,7 @@
             <converters:HtmlToSourceConverter x:Key="HtmlToSourceConverter" />
             <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
             <converters:StringLengthToBoolConverter x:Key="StringLengthToBoolConverter" />
+            <converters:DateToVisibleConverter x:Key="DateToVisibleConverter" />
             
             <!-- Our custom colors -->
             <Color x:Key="MainTextColor">#444444</Color>
@@ -21,6 +22,7 @@
             <Color x:Key="ButtonBackgroundColor">#2e82a7</Color>
             <Color x:Key="SeparatorColor">#2e82a7</Color>
             <Color x:Key="ListSeparatorColor">#ececec</Color>
+            <Color x:Key="NewBreachTextColor">#B94242</Color>
 
             <Color x:Key="SectionGroupBackgroundColor">#ececec</Color>
             <Color x:Key="SectionGroupTextColor">#666666</Color>
