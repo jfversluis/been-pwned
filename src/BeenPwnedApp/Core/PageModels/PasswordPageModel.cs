@@ -3,14 +3,19 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.UserDialogs;
 using BeenPwned.App.Core.Services;
+using PropertyChanged;
 using Xamarin.Forms;
 
 namespace BeenPwned.App.Core.PageModels
 {
     public class PasswordPageModel : BasePageModel
     {
-		public bool HasItems { get; set; }
+        [AlsoNotifyFor(nameof(IsPwned), nameof(IsNotPwned))]
 		public bool HasSearched { get; set; }
+
+        [AlsoNotifyFor(nameof(IsNotPwned))]
+        public bool IsPwned { get; set; }
+        public bool IsNotPwned => !IsPwned && HasSearched;
 
 		private string _filter;
 
@@ -23,7 +28,7 @@ namespace BeenPwned.App.Core.PageModels
 
 				if (string.IsNullOrEmpty(_filter))
 				{
-					HasItems = false;
+                    IsPwned = false;
 					HasSearched = false;
 				}
 			}
@@ -41,11 +46,11 @@ namespace BeenPwned.App.Core.PageModels
                 return;    
             }
 
-			HasItems = false;
+            IsPwned = false;
 			HasSearched = false;
 			IsLoading = true;
 
-            HasItems = await BeenPwnedService.Instance.GetIsPasswordPwned(Filter);
+            IsPwned = await BeenPwnedService.Instance.GetIsPasswordPwned(Filter);
 
             IsLoading = false;
     		HasSearched = true;
