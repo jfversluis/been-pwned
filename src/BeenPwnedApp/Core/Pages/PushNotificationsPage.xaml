@@ -16,7 +16,7 @@
                     HorizontalOptions="FillAndExpand"/>
 
                 <Label Margin="0,0,0,30" HorizontalTextAlignment="Center" Text="With push notifications you will be alerted when new breaches are added to the HIBP database. For security reasons you are not able to receive alerts on specific accounts. You will receive a general message that new breaches have been added, at maximum once per day." />
-                <Button Text="Enable push notifications" />
+                <Button Text="{Binding PushStatusButton}" Command="{Binding EnablePushNotificationsCommand}" />
             </StackLayout>
         </Grid>
 </ContentPage>
