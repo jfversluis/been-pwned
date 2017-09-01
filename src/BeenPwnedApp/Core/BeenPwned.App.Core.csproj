@@ -89,6 +89,7 @@
     <Compile Include="Views\LoadingView.xaml.cs">
       <DependentUpon>LoadingView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\DateToVisibleConverter.cs" />
     <Compile Include="Views\PasswordPwnedView.xaml.cs">
       <DependentUpon>PasswordPwnedView.xaml</DependentUpon>
     </Compile>

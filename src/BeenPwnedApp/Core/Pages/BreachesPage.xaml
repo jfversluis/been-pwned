@@ -49,6 +49,9 @@
                                     <Label Margin="0,5,0,0" FontSize="16" Style="{StaticResource BoldLabel}" Text="{Binding Title}" />
                                     <Label Margin="0,-5,0,5" TextColor="{StaticResource SecondaryTextColor}" Text="{Binding Domain}" />
                                 </StackLayout>
+
+                                <Label FontSize="Small" TextColor="{StaticResource NewBreachTextColor}" Grid.Column="2" Text="New" VerticalOptions="Center"
+                                    IsVisible="{Binding AddedDate, Converter={StaticResource DateToVisibleConverter}}" />
                             </Grid>
                         </local:AccessoryViewCell>
                     </DataTemplate>
