@@ -59,6 +59,7 @@
             </ListView>
 
             <views:LoadingView IsVisible="{Binding IsLoading}"/>
+            <views:ErrorView IsVisible="{Binding IsError}"/>
         </Grid>
 	</ContentPage.Content>
 </pages:BasePage>

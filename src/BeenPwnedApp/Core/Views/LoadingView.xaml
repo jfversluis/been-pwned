@@ -6,7 +6,7 @@
 	<ContentView.Content>
         <StackLayout VerticalOptions="Center" Padding="20,0,20,40" Spacing="10">
             <lottie:AnimationView Animation="animation-loader.json" HeightRequest="50" WidthRequest="50"
-                    Loop="True" IsPlaying="{Binding IsLoading}" AutoPlay="true"
+                    Loop="true" IsPlaying="true" AutoPlay="true"
                     VerticalOptions="FillAndExpand"
                     HorizontalOptions="FillAndExpand"/>
             <Label FontSize="15" Text="Loading..." HorizontalTextAlignment="Center" />
