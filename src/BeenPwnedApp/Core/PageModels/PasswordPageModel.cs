@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.UserDialogs;
 using BeenPwned.App.Core.Services;
@@ -15,7 +14,7 @@ namespace BeenPwned.App.Core.PageModels
 
         [AlsoNotifyFor(nameof(IsNotPwned))]
         public bool IsPwned { get; set; }
-        public bool IsNotPwned => !IsPwned && HasSearched;
+        public bool IsNotPwned => !IsError && !IsPwned && HasSearched;
 
 		private string _filter;
 
@@ -30,6 +29,7 @@ namespace BeenPwned.App.Core.PageModels
 				{
                     IsPwned = false;
 					HasSearched = false;
+                    IsError = false;
 				}
 			}
 		}
@@ -43,17 +43,26 @@ namespace BeenPwned.App.Core.PageModels
             if (string.IsNullOrWhiteSpace(Filter))
             {
                 await UserDialogs.Instance.AlertAsync("You need to enter a password", "No password entered", "OK");
-                return;    
+                return;
             }
 
             IsPwned = false;
 			HasSearched = false;
 			IsLoading = true;
 
-            IsPwned = await BeenPwnedService.Instance.GetIsPasswordPwned(Filter);
-
-            IsLoading = false;
-    		HasSearched = true;
+            try
+            {
+                IsPwned = await BeenPwnedService.Instance.GetIsPasswordPwned(Filter);
+            }
+            catch
+            {
+                IsError = true;
+            }
+            finally
+            {
+                IsLoading = false;
+                HasSearched = true;
+            }
 		}
     }
 }

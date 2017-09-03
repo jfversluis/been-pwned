@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" BackgroundColor="White"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="BeenPwned.App.Core.Views.ErrorView">
+	<ContentView.Content>
+         <StackLayout VerticalOptions="Center" Padding="20,0,20,40" Spacing="10">
+            <Label Text="&#x0001F494;" FontSize="100" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Label FontSize="20" Style="{StaticResource BoldLabel}" Text="Does not compute" HorizontalTextAlignment="Center" />
+            <Label FontSize="15" Text="Whoops! It's not you, it's me. Something went wrong while processing your request. Please try again. If this error keeps coming up, please contact us." HorizontalTextAlignment="Center" />
+        </StackLayout>
+	</ContentView.Content>
+</ContentView>

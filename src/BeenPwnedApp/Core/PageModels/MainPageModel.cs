@@ -32,6 +32,7 @@ namespace BeenPwned.App.Core.PageModels
                     BreachesAndPastes.Clear();
                     HasItems = false;
                     HasSearched = false;
+                    IsError = false;
                 }
             }
         }
@@ -68,50 +69,61 @@ namespace BeenPwned.App.Core.PageModels
             HasSearched = false;
             IsLoading = true;
 
-            var resultBreaches = await BeenPwnedService.Instance.GetBreachesForAccount(Filter);
-
-            var breachesGroup = BreachesAndPastes.SingleOrDefault(b => b.Name == "Breaches");
-
-            if (breachesGroup == null)
-                BreachesAndPastes.Add(new SearchListGroup("Breaches"));
-
-            BreachesAndPastes.Single(b => b.Name == "Breaches").ReplaceRange(resultBreaches);
-
-            IEnumerable<Paste> resultPastes = null;
-
             try
             {
-                resultPastes = await BeenPwnedService.Instance.GetPastesForAccount(Filter);
+                var resultBreaches = await BeenPwnedService.Instance.GetBreachesForAccount(Filter);
 
-                var pastesGroup = BreachesAndPastes.SingleOrDefault(b => b.Name == "Pastes");
 
-                if (resultPastes.Count() > 0)
+                var breachesGroup = BreachesAndPastes.SingleOrDefault(b => b.Name == "Breaches");
+
+                if (breachesGroup == null)
+                    BreachesAndPastes.Add(new SearchListGroup("Breaches"));
+
+                BreachesAndPastes.Single(b => b.Name == "Breaches").ReplaceRange(resultBreaches);
+
+
+                IEnumerable<Paste> resultPastes = null;
+
+                try
                 {
-                    if (pastesGroup == null)
-                        BreachesAndPastes.Add(new SearchListGroup("Pastes"));
+                    resultPastes = await BeenPwnedService.Instance.GetPastesForAccount(Filter);
 
-                    BreachesAndPastes.Single(b => b.Name == "Pastes").ReplaceRange(resultPastes);
+                    var pastesGroup = BreachesAndPastes.SingleOrDefault(b => b.Name == "Pastes");
+
+                    if (resultPastes.Count() > 0)
+                    {
+                        if (pastesGroup == null)
+                            BreachesAndPastes.Add(new SearchListGroup("Pastes"));
+
+                        BreachesAndPastes.Single(b => b.Name == "Pastes").ReplaceRange(resultPastes);
+                    }
+                    else
+                    {
+                        BreachesAndPastes.Remove(pastesGroup);
+                    }
                 }
-                else
+                catch (ArgumentException)
                 {
-                    BreachesAndPastes.Remove(pastesGroup);
+                    // If the given acount is not a (valid) e-mailaddress an ArgumentException will be thrown
+                    BreachesAndPastes.SingleOrDefault(b => b.Name == "Pastes")?.Clear();
+                    BreachesAndPastes.Remove(BreachesAndPastes.Where(g => g.Name == "Pastes").SingleOrDefault());
                 }
+
+                HasItems = BreachesAndPastes.SelectMany(g => g).Any();
+                var breachCount = resultBreaches?.Count() ?? 0;
+                var pasteCount = resultPastes?.Count() ?? 0;
+
+                BreachedDescription = $"Pwned on {breachCount} breached site(s) and found {pasteCount} paste(s).";
             }
-            catch (ArgumentException)
+            catch
             {
-                // If the given acount is not a (valid) e-mailaddress an ArgumentException will be thrown
-                BreachesAndPastes.SingleOrDefault(b => b.Name == "Pastes")?.Clear();
-                BreachesAndPastes.Remove(BreachesAndPastes.Where(g => g.Name == "Pastes").SingleOrDefault());
+                IsError = true;
             }
-
-            HasItems = BreachesAndPastes.SelectMany(g => g).Any();
-            var breachCount = resultBreaches?.Count() ?? 0;
-            var pasteCount = resultPastes?.Count() ?? 0;
-
-            BreachedDescription = $"Pwned on {breachCount} breached site(s) and found {pasteCount} paste(s).";
-
-            IsLoading = false;
-            HasSearched = true;
+            finally
+            {
+				IsLoading = false;
+				HasSearched = true;
+            }
         }
     }
 }

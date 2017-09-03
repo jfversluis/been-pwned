@@ -25,7 +25,9 @@ namespace BeenPwned.App.Core.PageModels
 
         protected override void ViewIsAppearing(object sender, EventArgs e)
         {
-            IsLoading = true;
+            if (Breaches.Count == 0)
+                IsLoading = true;
+            
             base.ViewIsAppearing(sender, e);
             ExecuteRefreshCommand(false);
         }
