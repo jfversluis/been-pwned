@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Akavache;
 using BeenPwned.Api;
 using BeenPwned.Api.Models;
+using Plugin.Connectivity;
 using Xamarin.Forms;
 
 namespace BeenPwned.App.Core.Services
@@ -20,9 +21,15 @@ namespace BeenPwned.App.Core.Services
             return cache.GetAndFetchLatest("breaches", async () => await _pwnedClient.GetAllBreaches(),
                 offset =>
                 {
-                    TimeSpan elapsed = DateTimeOffset.Now - offset;
-                    var invalidate = (force || elapsed > new TimeSpan(24, 0, 0));
-                    return invalidate;
+                    //If there is no network connection available, always return false so that the user will get cached data if available
+                    if (CrossConnectivity.Current.IsConnected)
+                    {
+                        TimeSpan elapsed = DateTimeOffset.Now - offset;
+                        var invalidate = (force || elapsed > new TimeSpan(24, 0, 0));
+                        return invalidate;
+                    }
+                    else
+                        return false;
                 });
         }
 
