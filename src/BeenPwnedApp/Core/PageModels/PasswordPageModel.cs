@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.UserDialogs;
 using BeenPwned.App.Core.Services;
+using Plugin.Connectivity;
 using PropertyChanged;
 using Xamarin.Forms;
 
@@ -44,6 +45,14 @@ namespace BeenPwned.App.Core.PageModels
             {
                 await UserDialogs.Instance.AlertAsync("You need to enter a password", "No password entered", "OK");
                 return;    
+            }
+
+            if (!CrossConnectivity.Current.IsConnected)
+            {
+                await UserDialogs.Instance.AlertAsync("It seems you have no active internet connection. Please verify that you have and try again.",
+                                               "No internet", "OK");
+
+                return;
             }
 
             IsPwned = false;

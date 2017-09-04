@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Acr.UserDialogs;
 using BeenPwned.Api.Models;
 using BeenPwned.App.Core.Models;
 using BeenPwned.App.Core.Services;
 using MvvmHelpers;
+using Plugin.Connectivity;
 using Xamarin.Forms;
 
 namespace BeenPwned.App.Core.PageModels
@@ -64,6 +66,14 @@ namespace BeenPwned.App.Core.PageModels
 
         private async Task CheckPwned()
         {
+			if (!CrossConnectivity.Current.IsConnected)
+			{
+				await UserDialogs.Instance.AlertAsync("It seems you have no active internet connection. Please verify that you have and try again.",
+											   "No internet", "OK");
+
+				return;
+			}
+
             HasItems = false;
             HasSearched = false;
             IsLoading = true;
