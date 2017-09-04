@@ -20,9 +20,14 @@ namespace BeenPwned.App.Core.Services
             return cache.GetAndFetchLatest("breaches", async () => await _pwnedClient.GetAllBreaches(),
                 offset =>
                 {
-                    TimeSpan elapsed = DateTimeOffset.Now - offset;
-                    var invalidate = (force || elapsed > new TimeSpan(24, 0, 0));
-                    return invalidate;
+                    if (CrossConnectivity.Current.IsConnected)
+                    {
+                        TimeSpan elapsed = DateTimeOffset.Now - offset;
+                        var invalidate = (force || elapsed > new TimeSpan(24, 0, 0));
+                        return invalidate;
+                    }
+                    else
+                        return false;
                 });
         }
 
