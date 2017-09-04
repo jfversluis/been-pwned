@@ -286,7 +286,7 @@
     <BundleResource Include="Resources\icon-password-color.png" />
     <BundleResource Include="Resources\Fonts\Password-Dots.ttf" />
     <BundleResource Include="Resources\Fonts\fontawesome.ttf" />
-    <BundleResource Include="Resources\Notification_Red.json" />
+    <BundleResource Include="Resources\animation-notification.json" />
     <BundleResource Include="Resources\icon-settings%402x.png" />
     <BundleResource Include="Resources\icon-settings%403x.png" />
     <BundleResource Include="Resources\animation-loader.json" />

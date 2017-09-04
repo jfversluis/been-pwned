@@ -25,7 +25,9 @@ namespace BeenPwned.App.Core.PageModels
 
         protected override void ViewIsAppearing(object sender, EventArgs e)
         {
-            IsLoading = true;
+            if (Breaches.Count == 0)
+                IsLoading = true;
+
             base.ViewIsAppearing(sender, e);
             ExecuteRefreshCommand(false);
         }
@@ -42,6 +44,7 @@ namespace BeenPwned.App.Core.PageModels
         private void ExecuteRefreshCommand(bool isRefreshing = true)
         {
             IsRefreshing = isRefreshing;
+            IsError = false;
 
             BeenPwnedService.Instance.GetAllBreaches()
                             .Subscribe((breaches) =>
@@ -54,6 +57,11 @@ namespace BeenPwned.App.Core.PageModels
 
                     _breaches.ReplaceRange(sorted);
 
+                    IsLoading = false;
+                    IsRefreshing = false;
+                }, (ex) =>
+                {
+                    IsError = true;
                     IsLoading = false;
                     IsRefreshing = false;
                 });

@@ -95,6 +95,7 @@
 
 
             <views:LoadingView Grid.Row="1" Grid.RowSpan="2" IsVisible="{Binding IsLoading}"/>
+            <views:ErrorView Grid.Row="1" Grid.RowSpan="2" IsVisible="{Binding IsError}"/>
         </Grid>
 	</ContentPage.Content>
 </pages:BasePage>

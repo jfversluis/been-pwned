@@ -11,7 +11,8 @@ namespace BeenPwned.App.Core.PageModels
     {
         protected bool _isNavigating;
 
-        public bool IsLoading { get; set; }
+		public bool IsLoading { get; set; }
+		public bool IsError { get; set; }
 
 		private ICommand _openSettingsCommand;
 		public ICommand OpenSettingsCommand => _openSettingsCommand ?? (_openSettingsCommand = new Command(async (i) => await OpenSettings(), (arg) => !_isNavigating));
