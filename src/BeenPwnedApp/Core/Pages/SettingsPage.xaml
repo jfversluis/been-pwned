@@ -134,6 +134,21 @@
                 <local:AccessoryViewCell Accessory="disclosure">
                     <Grid HeightRequest="60">
                         <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/jamesmontemagno/ConnectivityPlugin" />
+                        </Grid.GestureRecognizers>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="Center" Grid.Column="0">
+                            <Label Margin="20,0,20,0" VerticalTextAlignment="Center" Text="Connectivity Plugin" />
+                        </StackLayout>
+                    </Grid>
+                </local:AccessoryViewCell>
+                <local:AccessoryViewCell Accessory="disclosure">
+                    <Grid HeightRequest="60">
+                        <Grid.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/luberda-molinet/FFImageLoading" />
                         </Grid.GestureRecognizers>
                         
