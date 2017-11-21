@@ -5,7 +5,7 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportRenderer(typeof(TableView), typeof(TableViewHeaderRenderer))]
+//[assembly: ExportRenderer(typeof(TableView), typeof(TableViewHeaderRenderer))]
 namespace BeenPwned.App.Core.iOS.Renderers
 {
     public class TableViewHeaderRenderer : TableViewRenderer

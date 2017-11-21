@@ -57,7 +57,7 @@
                 <local:AccessoryViewCell Accessory="disclosure">
                     <Grid HeightRequest="60">
                         <Grid.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/jfversluis/been-pwned/supporting-files/disclaimer" />
+                            <TapGestureRecognizer Command="{Binding OpenUrlCommand}" CommandParameter="https://github.com/jfversluis/been-pwned/blob/master/supporting-files/disclaimer.md" />
                         </Grid.GestureRecognizers>
                         
                         <Grid.ColumnDefinitions>

@@ -51,6 +51,7 @@ namespace BeenPwned.App.iOS.Renderers
             var newClearImage = clearButton.ImageView?.Image?.ImageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate);
             Control.SetImageforSearchBarIcon(newClearImage, UISearchBarIcon.Clear, UIControlState.Normal);
 
+
             // Styles the placeholder and the cursor
             var textfieldAppearance = UITextField.AppearanceWhenContainedIn(typeof(UISearchBar));
             textfieldAppearance.TintColor = UIColor.White;
