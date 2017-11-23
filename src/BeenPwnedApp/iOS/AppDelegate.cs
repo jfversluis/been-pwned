@@ -3,7 +3,9 @@ using CarouselView.FormsPlugin.iOS;
 using FFImageLoading.Forms.Touch;
 using Foundation;
 using Lottie.Forms.iOS.Renderers;
+#if !DEBUG
 using StoreKit;
+#endif
 using UIKit;
 using WindowsAzure.Messaging;
 using Xamarin.Forms;
@@ -17,6 +19,14 @@ namespace BeenPwned.App.iOS
 
 		public const string ConnectionString = "Endpoint=sb://beenpwnedhub-ns.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=4w0mdntJjCkg+2miI3LnaHhZsifBQsXvm8wnjOu7jcg=";
 		public const string NotificationHubPath = "beenpwnedhub";
+
+        public override void OnActivated(UIApplication uiApplication)
+        {
+            base.OnActivated(uiApplication);
+
+            // Reset the badge number
+            UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
+        }
 
 		public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
         {
