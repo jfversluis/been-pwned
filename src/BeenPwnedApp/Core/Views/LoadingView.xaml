@@ -5,10 +5,13 @@
     x:Class="BeenPwned.App.Core.Views.LoadingView">
 	<ContentView.Content>
         <StackLayout VerticalOptions="Center" Padding="20,0,20,40" Spacing="10">
-            <lottie:AnimationView Animation="animation-loader.json" HeightRequest="50" WidthRequest="50"
+            <!-- TODO Lottie Animation hangs when used in multiple pages, ActivityIndicator for now -->
+            <!--<lottie:AnimationView Animation="animation-loader.json" HeightRequest="50" WidthRequest="50"
                     Loop="true" IsPlaying="true" AutoPlay="true"
                     VerticalOptions="FillAndExpand"
-                    HorizontalOptions="FillAndExpand"/>
+                    HorizontalOptions="FillAndExpand"/>-->
+            <ActivityIndicator HeightRequest="50" WidthRequest="50" VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand" IsRunning="true" />
             <Label FontSize="15" Text="Loading..." HorizontalTextAlignment="Center" />
         </StackLayout>
 	</ContentView.Content>
